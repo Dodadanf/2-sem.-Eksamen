@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main_grid">
+
+        <header>
+
+            <section id="header">
+
+                <a href="index.html">
+                    <h1 class="logo">Schjødts</h1>
+                    <!--<div class="logo"></div>-->
+                </a>
+
+
+                <!--<button class="burgermenu">
+                   <div class="bar1"></div>
+                   <div class="bar2"></div>
+                   <div class="bar3"></div>
+               </button>-->
+
+                <nav id="hovedmenu">
+                    <a id="selskaber" href="om_helene.html">Om Helene</a>
+                    <a id="bookbord" href="kurser.html">Kurser</a>
+                    <a id="spishjemme" href="find_forhandler.html">Find forhandler</a>
+                    <a id="spisude" href="nyheder.html">Nyheder</a>
+                </nav>
+
+            </section>
+
+        </header>
+
+
+        <main></main>
+
+
+        <section class="sidemenu">
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Kollektioner</button>
+                <div id="myDropdown" class="dropdown-content" data-menu>
+                    <!--                    <a href="#home">The fern collection</a>
+                    <a href="#about">The Thistle collection</a>
+                    <a href="#contact">The treetop collection</a>
+                    <a href="#home">The bearclaw collecton</a>
+                    <a href="#about">The sage collection</a>
+                    <a href="#contact">Sagebrush collection</a>-->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="myFunction2()" class="dropbtn2">Kurser</button>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <section class="footer">
+                <p class="kontaktinfo" data-telefonnummer>""</p>
+                <p class="kontaktinfo" data-email>""</p>
+                <p class="kontaktinfo" data-adresse>""</p>
+                <p class="kontaktinfo" data-aabningstider>""</p>
+                <p class="kontaktinfo" data-cvr>""</p>
+
+            </section>
+
+        </footer>
+
+
+        <template data-menutemplate>
+            <a href="produkter.html" data-link></a>
+        </template>
+
+    </div>
+
+
+
+
+
+    <script src="sidebarmenu.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+</html>
