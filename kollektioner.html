@@ -10,98 +10,44 @@
 <body>
 
     <div class="main_grid">
-        <header>
-            <a href="index.html">
-                <div class="logo-billede"></div>
-            </a>
-            <!--<h1 class="logo">Schjødts</h1>-->
-            <!--<div class="logo"></div>-->
-
-
-            <!--<button class="burgermenu">
-                   <div class="bar1"></div>
-                   <div class="bar2"></div>
-                   <div class="bar3"></div>
-               </button>-->
-
-            <nav id="hovedmenu">
-                <a id="selskaber" href="om_helene.html">Om Helene</a>
-                <a id="bookbord" href="kurser.html">Kurser</a>
-                <a id="spishjemme" href="find_forhandler.html">Find forhandler</a>
-                <a id="spisude" href="nyheder.html">Nyheder</a>
-            </nav>
-        </header>
-
-
-
+        <section class="header">
+        </section>
 
 
         <main>
-
             <section class="kollektioner" data-kollektionsliste>
-
             </section>
-
         </main>
+
+
         <section class="sidemenu">
-
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Kollektioner</button>
-                <div id="myDropdown" class="dropdown-content" data-menu>
-
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="kurser.html" class="dropbtn">Kurser</a>
-            </div>
-
         </section>
-        <footer>
 
-            <section class="footer">
-                <p class="kontaktinfo" data-telefonnummer>""</p>
-                <p class="kontaktinfo" data-email>""</p>
-                <p class="kontaktinfo" data-adresse>""</p>
-                <p class="kontaktinfo" data-aabningstider>""</p>
-                <p class="kontaktinfo" data-cvr>""</p>
-
-            </section>
-
-        </footer>
 
         <template data-kollektionertemplate>
-
             <article>
                 <h3 data-titel></h3>
                 <img src="" alt="" data-billede>
             </article>
-
         </template>
+
 
         <template data-menutemplate>
             <a href="" data-link></a>
         </template>
 
+
+        <section class="footer">
+        </section>
+
+
     </div>
-    <script src="sidebarmenu.js"></script>
-    <script src="footer.js"></script>
+    <script src="javascript.js"></script>
     <script>
-        let jSonUrlKollektionsliste = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner"
-        let kollektionsliste = [];
-
-        document.addEventListener("DOMContentLoaded", hentJsonkollektionsliste);
-
-        async function hentJsonkollektionsliste() {
+        document.addEventListener("DOMContentLoaded", visKollektioner);
 
 
-            let dataJsonKollektionsliste = await fetch(jSonUrlKollektionsliste);
-
-            kollektionsliste = await dataJsonKollektionsliste.json();
-
-            visKollektionsliste();
-        };
-
-        function visKollektionsliste() {
+        function visKollektioner() {
             kollektioner.forEach(kollektion => {
                 let display = document.querySelector("[data-kollektionsliste]");
                 let template = document.querySelector("[data-kollektionertemplate]");

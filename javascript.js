@@ -1,17 +1,59 @@
+let jSonUrl = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info/12"
+let kontakt = [];
+
 let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner"
 let kollektioner = [];
 
-document.addEventListener("DOMContentLoaded", hentJsonSidemenu);
 
-async function hentJsonSidemenu() {
+document.addEventListener("DOMContentLoaded", hentJson);
 
+
+
+// ASYNC FUNCTIONS - HENT INDHOLD
+
+async function hentJson() {
+    let dataJson = await fetch(jSonUrl);
+    kontakt = await dataJson.json();
 
     let dataJsonKollektioner = await fetch(jSonUrlKollektioner);
 
     kollektioner = await dataJsonKollektioner.json();
 
-    visKollektioner();
+    hentFastIndhold();
+
 };
+
+
+//HEADER
+
+
+
+
+
+
+// SIDEMENU
+
+
+async function hentFastIndhold() {
+
+    let headerData = await fetch("header.html");
+    let header = await headerData.text();
+    document.querySelector(".header").innerHTML = header;
+
+    let footerData = await fetch("footer.html");
+    let footer = await footerData.text();
+    document.querySelector(".footer").innerHTML = footer;
+
+    let sidemenuData = await fetch("sidemenu.html");
+    let sidemenu = await sidemenuData.text();
+    document.querySelector(".sidemenu").innerHTML = sidemenu;
+
+
+
+    visKontakt();
+    visKollektioner();
+
+}
 
 function visKollektioner() {
     kollektioner.forEach(kollektion => {
@@ -54,24 +96,17 @@ window.onclick = function (event) {
 
 
 
+// FOOTER
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-/*function myFunction2() {
-    document.getElementById("myDropdown2").classList.toggle("show2");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn2')) {
+function visKontakt() {
+    document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
 
-        var dropdowns = document.getElementsByClassName("dropdown-content2");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show2')) {
-                openDropdown.classList.remove('show2');
-            }
-        }
-    }
-};*/
+    document.querySelector("[data-email]").textContent = kontakt.acf.email;
+
+    document.querySelector("[data-adresse]").textContent = kontakt.acf.adresse;
+
+    document.querySelector("[data-aabningstider]").innerHTML = kontakt.acf.åbningstider;
+
+    /*document.querySelector("[data-cvr]").textContent = "Tlf. " + kontakt.acf.cvr;*/
+};

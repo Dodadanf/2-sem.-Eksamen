@@ -11,77 +11,38 @@
 <body>
 
     <div class="main_grid">
-        <header>
-            <a href="index.html">
-                <div class="logo-billede"></div>
-            </a>
-            <!--<h1 class="logo">Schjødts</h1>-->
-            <!--<div class="logo"></div>-->
 
 
-            <!--<button class="burgermenu">
-                   <div class="bar1"></div>
-                   <div class="bar2"></div>
-                   <div class="bar3"></div>
-               </button>-->
+        <section class="header">
+        </section>
 
-            <nav id="hovedmenu">
-                <a id="selskaber" href="om_helene.html">Om Helene</a>
-                <a id="bookbord" href="kurser.html">Kurser</a>
-                <a id="spishjemme" href="find_forhandler.html">Find forhandler</a>
-                <a id="spisude" href="nyheder.html">Nyheder</a>
-            </nav>
-        </header>
+
         <main>
-
             <h3>Find os her</h3>
             <div id="map" data-map></div>
-
         </main>
+
+
         <section class="sidemenu">
-
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Kollektioner</button>
-                <div id="myDropdown" class="dropdown-content" data-menu>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="kurser.html" class="dropbtn">Kurser</a>
-            </div>
-
         </section>
-        <footer>
 
-            <section class="footer">
-                <p class="kontaktinfo" data-telefonnummer>""</p>
-                <p class="kontaktinfo" data-email>""</p>
-                <p class="kontaktinfo" data-adresse>""</p>
-                <p class="kontaktinfo" data-aabningstider>""</p>
-                <p class="kontaktinfo" data-cvr>""</p>
-
-            </section>
-
-        </footer>
-
-        <template data-templatemaps>
-
-       </template>
 
         <template data-menutemplate>
             <a href="" data-link></a>
         </template>
 
-    </div>
-    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH2SMOF742UXKJZ5Q4ur-wctFt_9Bv2YE&callback=initMap">
-    </script>-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyT4tZKVLoOzjcKheBYCS2fQvFHwKDhlA&callback=initMap" async defer></script>
-    <script src="sidebarmenu.js"></script>
-    <script src="footer.js"></script>
 
+        <section class="footer">
+        </section>
+
+
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyT4tZKVLoOzjcKheBYCS2fQvFHwKDhlA&callback=initMap" async defer></script>
+    <script src="javascript.js"></script>
 
     <script>
-        let jSonUrlKontakter = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info";
-        let kontakter;
+ let jSonUrlKontakter = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info"; let kontakter;
         let map;
         let adresse;
 
