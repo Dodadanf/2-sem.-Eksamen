@@ -201,3 +201,15 @@ footer {
     grid-gap: 5%;
 }
 
+
+.main_nyhedsgrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+}
+
+.nyhedsbillede {
+    width: 100%;
+    height: auto;
+}
