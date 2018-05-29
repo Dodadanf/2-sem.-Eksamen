@@ -225,3 +225,15 @@ h1 {
     width: 100%;
     height: auto;
 }
+
+.main_kursusgrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+}
+
+.kursusbillede {
+    width: 100%;
+    height: auto;
+}

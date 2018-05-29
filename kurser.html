@@ -20,7 +20,18 @@
 
 
         <main>
+            <section class="main_kursusgrid" data-liste>
+            </section>
         </main>
+
+        <template class="kurser" data-template>
+          <article class="kursus" data-kursus>
+              <h3 class="kursustitelnavn" data-kursustitel></h3>
+              <!--<img class="kursusbillede" src="" alt="" data-kursusbillede>-->
+              <p class="kursusbeskrivelse" data-kursusbeskrivelse></p>
+              <p class="kursuspris" data-kursuspris></p>
+          </article>
+        </template>
 
 
         <section class="sidemenu">
@@ -38,6 +49,37 @@
 
     </div>
     <script src="javascript.js"></script>
+    <script>
+        let jSonUrlKurser = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kurser"
+        let kurser = [];
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrlKurser);
+            kurser = await dataJson.json();
+
+            visKurser();
+        };
+
+
+        function visKurser() {
+            kurser.forEach(kursus => {
+                let display = document.querySelector("[data-liste]");
+                let template = document.querySelector("[data-template]");
+                let klon = template.cloneNode(true).content;
+                console.log(kursus);
+                klon.querySelector("[data-kursustitel]").textContent = kursus.acf.kursus_navn;
+                /*klon.querySelector("[data-nyhedsbillede]").src = kursus.acf.nyhedsbillede.sizes.large;
+                klon.querySelector("[data-nyhedsbillede]").alt = kursus.acf.nyhedstitel;*/
+                klon.querySelector("[data-kursusbeskrivelse]").innerHTML = kursus.acf.kursus_beskrivelse
+                klon.querySelector("[data-kursuspris]").textContent = kursus.acf.kursus_pris
+                display.appendChild(klon);
+
+            });
+        };
+
+    </script>
 </body>
 
 </html>
