@@ -31,6 +31,22 @@ function visKollektioner() {
 
 };
 
+
+function dropdownFunction() {
+
+    var dropdownmenu = document.getElementsByClassName("dropdownContent");
+
+    element.classList.remove("dropdownContent")
+}
+
+
+
+
+
+
+
+
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
