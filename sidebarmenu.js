@@ -20,10 +20,9 @@ function visKollektioner() {
         let template = document.querySelector("[data-menutemplate]");
         let klon = template.cloneNode(true).content;
 
-        /*klon.querySelector("[data-link]").href = "produkter.html";*/
         klon.querySelector("[data-link]").textContent = kollektion.acf.kollektionens_navn;
         klon.querySelector("[data-link]").addEventListener("click", () => {
-            location.href = "produkt.html?kollektion=" + kollektion.acf.kollektionens_navn;
+            location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
         });
         display.appendChild(klon);
 

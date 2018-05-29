@@ -154,9 +154,17 @@
                                 content: "<h2>" + kontakt.acf.firmanavn + "</h2>" + "<p>" + kontakt.acf.adresse + "</p>" + "<p>" + kontakt.acf.telefonnummer + "</p>" + "<p>" + kontakt.acf.email + "</p>" + "<p>" + kontakt.acf.hjemmeside + "</p>" + "<p>" + kontakt.acf.åbningstider + "</p>"
 
                             });
+                            console.log(marker[i]);
 
-                            marker[i].addListener("click", () => {
-                                infowindow.open(map, marker[i]);
+
+                            marker[i].addListener("click", function() {
+                                console.log(marker[i]);
+
+                                infowindow.open(map, this);
+                            });
+
+                            google.maps.event.addListener(map, "click", function(event) {
+                                infowindow.close();
                             });
 
                         } else {

@@ -92,9 +92,8 @@
 
 
         <template data-menutemplate>
-            <a href="produkter.html" data-link></a>
-        </template>
-
+            <button class="button" data-link></button>
+            </template>
     </div>
     <script src="sidebarmenu.js"></script>
     <script src="footer.js"></script>
@@ -109,20 +108,24 @@
         document.addEventListener("DOMContentLoaded", hentJson);
 
         async function hentJson() {
+
+            console.log("hej ");
+
+            console.log(kolle);
             let dataJsonProdukter = await fetch(jSonUrlProdukter);
             produkter = await dataJsonProdukter.json();
 
             koll = produkter.filter(function(e) {
                 return e.acf.produkt_kollektion.includes(kolle);
-
+                console.log(koll);
             });
 
             visProdukter(koll);
         };
 
 
-        function visProdukter(produ) {
-            produ.forEach(produkt => {
+        function visProdukter(prod) {
+            prod.forEach(produkt => {
                 let display = document.querySelector("[data-liste]");
                 let template = document.querySelector("[data-template]");
                 let klon = template.cloneNode(true).content;

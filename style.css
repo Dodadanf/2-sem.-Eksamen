@@ -23,11 +23,9 @@ header {
 main {
     grid-column: 2/3;
     grid-row: 2;
-    background-color: antiquewhite;
 }
 
 .sidemenu {
-    background-color: beige;
     height: 20vh;
     width: 20vw;
     position: fixed;
@@ -163,8 +161,8 @@ footer {
 /************     maps     *************/
 
 #map {
-    width: 83vw;
-    height: 83vw;
+    width: 40vw;
+    height: 40vw;
 }
 
 
@@ -200,3 +198,19 @@ footer {
     width: 100%;
     height: auto;
 }
+
+.button {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+
+    background-color: #3498DB;
+}
+
+
