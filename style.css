@@ -41,6 +41,18 @@ main {
 }
 
 
+
+/********    GOOGLE FONTE    ********/
+
+@import url('https://fonts.googleapis.com/css?family=Rozha+One');
+
+
+h1 {
+    font-family: 'Rozha One', serif;
+}
+
+
+
 /**************       Sidebare menuen         ***********/
 
 .dropbtn {
