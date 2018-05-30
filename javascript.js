@@ -1,7 +1,7 @@
-let jSonUrl = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info/12"
+let jSonUrl = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info/12";
 let kontakt = [];
 
-let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner"
+let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner";
 let kollektioner = [];
 
 
@@ -21,20 +21,12 @@ async function hentJson() {
 
     hentFastIndhold();
 
+
 };
 
-
-//HEADER
-
-
-
-
-
-
-// SIDEMENU
-
-
 async function hentFastIndhold() {
+
+    var mq = window.matchMedia('all and (max-width: 900px)');
 
     let headerData = await fetch("header.html");
     let header = await headerData.text();
@@ -44,14 +36,27 @@ async function hentFastIndhold() {
     let footer = await footerData.text();
     document.querySelector(".footer").innerHTML = footer;
 
-    let sidemenuData = await fetch("sidemenu.html");
-    let sidemenu = await sidemenuData.text();
-    document.querySelector(".sidemenu").innerHTML = sidemenu;
 
+    if (mq.matches) {
+        console.log("mobilmenu");
+        let sidemenuData = await fetch("mobilmenu.html");
+
+        console.log(sidemenuData.text);
+
+        let sidemenu = await sidemenuData.text();
+        document.querySelector(".sidemenu").innerHTML = sidemenu;
+    }
+
+    else{
+        let sidemenuData = await fetch("sidemenu.html");
+        let sidemenu = await sidemenuData.text();
+        document.querySelector(".sidemenu").innerHTML = sidemenu;
+    }
 
 
     visKontakt();
     visKollektioner();
+        burgermenu();
 
 }
 
@@ -76,7 +81,7 @@ function visKollektioner() {
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show")
+    document.getElementById("myDropdown").classList.toggle("showSidemenu")
 }
 
 // Close the dropdown if the user clicks outside of it
@@ -87,12 +92,41 @@ window.onclick = function (event) {
         var i;
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+            if (openDropdown.classList.contains('showSidemenu')) {
+                openDropdown.classList.remove('showSidemenu');
             }
         }
     }
 };
+
+
+function burgermenu() {
+
+     console.log("burgermenu");
+     document.querySelector(".burgermenu").addEventListener("mouseover", burgerFarveskiftOver);
+
+     document.querySelector(".burgermenu").addEventListener("mouseout", burgerFarveskiftOut)
+
+     document.querySelector(".burgermenu").addEventListener("click", toggleBurgermenu);
+
+     function burgerFarveskiftOver() {
+         document.querySelector(".bar1").classList.add("farveskift");
+         document.querySelector(".bar2").classList.add("farveskift");
+         document.querySelector(".bar3").classList.add("farveskift");
+     }
+
+     function burgerFarveskiftOut() {
+         document.querySelector(".bar1").classList.remove("farveskift");
+         document.querySelector(".bar2").classList.remove("farveskift");
+         document.querySelector(".bar3").classList.remove("farveskift");
+     }
+
+     function toggleBurgermenu() {
+         document.querySelector(".burgermenu").classList.toggle("change");
+         document.querySelector(".burgermenu").classList.toggle("skrump");
+         document.querySelector(".sidemenu").classList.toggle("show");
+     }
+ }
 
 
 
