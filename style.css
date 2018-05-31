@@ -6,11 +6,18 @@ body {
     margin: 0;
     padding: 0;
     background-color:  #f8f4f1;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
 }
 
 a{
     text-decoration: none;
     color: #fff;
+}
+
+img{
+    width: 100%;
+    height: auto;
 }
 
 /*************      Hoved grid´et     *************/
@@ -26,11 +33,11 @@ a{
 .header {
     grid-column: 1/14;
     grid-row: 1;
-    height: 20vw;
+    height: 13vw;
 }
 
 main {
-    grid-column: 1/14;
+    grid-column: 2/13;
 }
 
 .footer {
@@ -45,14 +52,20 @@ main {
 
 h1 {
     font-family: 'Rozha One', serif;
+    font-size: 4em;
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
 }
 
 h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rozha One', serif;
+    font-size: 3em;
+    margin: 1vw 0 1vw 0;
+    text-align: center;
+    color: #efddd0;
 }
 
 p {
@@ -88,17 +101,15 @@ header{
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column: 2/12;
     overflow: hidden;
     position: fixed;
-/*    width: 100%;*/
     padding-bottom: 3vw;
 }
 
 
 /** menupunkter **/
 
-#kollektioner, #kurser, #forhandler, #om, #nyheder{
+#kollektioner, #kurser, #forhandler, #om{
     color: #5777B3;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
@@ -122,6 +133,7 @@ header{
 
 #kurser{
     grid-column: 4/5;
+    padding-left: 3vw;
 }
 
 #om{
@@ -156,15 +168,14 @@ hr{
     text-align: center;
 }
 
-/*
-.dropdown_kollektioner{
-    grid-column: 2;
+.dropdown_kollektion{
+   grid-column: 2/3;
 }
 
 .dropdown_kurser{
-    grid-column: 3;
+    grid-column: 4/5;
+    padding-left: 3vw;
 }
-*/
 
 .dropbtn {
     font-size: 0.5em;
@@ -262,7 +273,8 @@ display: none;
 /************     maps     *************/
 
 #map {
-    width: 40vw;
+    grid-column: 1/14;
+    margin: 0 0 2vw 0;
     height: 40vw;
 }
 
@@ -293,26 +305,21 @@ display: none;
 
 }
 
-
 .main_indexgrid {
     height: 50vw;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 5%;
-}
 
+}
 
 .main_nyhedsgrid {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5%;
-}
 
-.nyhedsbillede {
-    width: 100%;
-    height: auto;
 }
 
 .main_kursusgrid {
@@ -328,39 +335,69 @@ display: none;
 }
 
 
-/* SLIDERE */
+/* FORSIDE */
 
-/*NYHEDSLIDER*/
-
-#nyhedsslider {
-    grid-column: 2/13;
-    width: 825px;
-    height: 240px;
-    overflow: hidden;
+#baggrundsvideo{
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 8vw;
 }
 
-.prev_forside:hover,
-.next_forside:hover {
-    background-color: rgba(255, 255, 255, 0.50);
-}
-
-.nyhedsslide {
-    float: left;
-    list-style-type: none;
-    width: 530px;
-    height: 180px;
-}
-
-.nyhedsoverskrift {
-    position: relative;
-    top: 31vw;
-    padding: 1vw 0 1vw 15vw;
-    color: #fff;
+#nyheder_header {
+    font-size: 6em;
+    position: absolute;
+    top: 44vw;
+    left: 9.4vw;
+    padding: 1vw;
+    color: #f1a6a3;
     z-index: 0;
-    background-color: rgba(111, 198, 180, 0.6);
+    width: 60%;
+    margin: 0;
+    width: auto;
+
 }
 
+#nyheder_underheader{
+    font-size: 2em;
+    color: #b0d3d7;
+    position: absolute;
+    left: 20.5vw;
+    top: 50.5vw;
+}
 
+#velkommen{
+    grid-row: 1;
+    grid-column: 2;
+    z-index: 1;
+    margin: 0;
+    color: #B0d3d7;
+    text-align: right;
+    font-size: 4em;
+}
+
+#univers{
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 1em;
+    color: #b0d3d7;
+    text-align: right;
+    padding-top: 4vw;
+}
+
+blockquote{
+    grid-row: 1;
+    grid-column: 2;
+    margin: 40vw 10vw 7vw 20vw;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #e2c7b5;
+}
+
+#signatur{
+    width: 5vw;
+    height: 2vw;
+    background-image: url(assets/Signatur/underskrift%20bl%C3%A5.svg);
+}
 
 @media all and (max-width: 1000px) {
 
