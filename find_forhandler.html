@@ -95,6 +95,12 @@
                         if (status == 'OK') {
 
                             marker[i] = new google.maps.Marker({
+
+                                 icon:{
+                                    url: kontakt.acf.logo.url,
+                                    scaledSize: new google.maps.Size(70,30)
+                                },
+
                                 map: map,
                                 position: results[0].geometry.location
                             });
@@ -102,7 +108,7 @@
                             console.log(marker[i])
 
                             let infowindow = new google.maps.InfoWindow({
-                                content: "<h2>" + kontakt.acf.firmanavn + "</h2>" + "<p>" + kontakt.acf.adresse + "</p>" + "<p>" + kontakt.acf.telefonnummer + "</p>" + "<p>" + kontakt.acf.email + "</p>" + "<p>" + kontakt.acf.hjemmeside + "</p>" + "<p>" + kontakt.acf.åbningstider + "</p>"
+                                content: "<h2>" + kontakt.acf.firmanavn + "</h2>" + "<p>" + kontakt.acf.adresse + "</p>" + "<p>" + kontakt.acf.postnr_by + "</p>" + "<p>" + kontakt.acf.land + "</p>" + "<p>" + kontakt.acf.telefonnummer + "</p>" + "<p>" + kontakt.acf.email + "</p>" + "<p>" + kontakt.acf.hjemmeside + "</p>" + "<p>" + kontakt.acf.åbningstider + "</p>"
 
                             });
                             console.log(marker[i]);

@@ -36,6 +36,12 @@ async function hentFastIndhold() {
     let footer = await footerData.text();
     document.querySelector(".footer").innerHTML = footer;
 
+    let nyhedsbrevData = await fetch("nyhedsbrev.html");
+    let nyhedsbrev = await nyhedsbrevData.text();
+    document.querySelector("#nyhedsbrev").innerHTML = nyhedsbrev;
+
+    document.querySelector("[data-nyhedsbrev]").addEventListener("click", openPopup);
+
 
     if (mq.matches) {
         console.log("mobilmenu");
@@ -43,21 +49,38 @@ async function hentFastIndhold() {
 
         console.log(sidemenuData.text);
 
-//        let sidemenu = await sidemenuData.text();
-//        document.querySelector(".sidemenu").innerHTML = sidemenu;
-//
-    }
-
-    else{
-//        let sidemenuData = await fetch("sidemenu.html");
-//        let sidemenu = await sidemenuData.text();
-//        document.querySelector(".sidemenu").innerHTML = sidemenu;
+        //        let sidemenu = await sidemenuData.text();
+        //        document.querySelector(".sidemenu").innerHTML = sidemenu;
+        //
+    } else {
+        //        let sidemenuData = await fetch("sidemenu.html");
+        //        let sidemenu = await sidemenuData.text();
+        //        document.querySelector(".sidemenu").innerHTML = sidemenu;
     }
 
 
     visKontakt();
     visKollektioner();
-        burgermenu();
+    burgermenu();
+
+}
+
+//Åben modal/popup
+
+function openPopup() {
+
+    document.querySelector(".popup").style.visibility = "visible";
+    // igen bruges class istedet for data-, da man skal ændre stylingen
+
+//    document.querySelector("[data-billede]").src = sliderImageMenukort;
+//    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
+}
+
+document.querySelector("[data-close-button]").addEventListener("click", closePopup);
+
+function closePopup() {
+    document.querySelector(".popup").style.visibility = "hidden";
+
 
 }
 
@@ -103,31 +126,31 @@ window.onclick = function (event) {
 
 function burgermenu() {
 
-     console.log("burgermenu");
-     document.querySelector(".burgermenu").addEventListener("mouseover", burgerFarveskiftOver);
+    console.log("burgermenu");
+    document.querySelector(".burgermenu").addEventListener("mouseover", burgerFarveskiftOver);
 
-     document.querySelector(".burgermenu").addEventListener("mouseout", burgerFarveskiftOut)
+    document.querySelector(".burgermenu").addEventListener("mouseout", burgerFarveskiftOut)
 
-     document.querySelector(".burgermenu").addEventListener("click", toggleBurgermenu);
+    document.querySelector(".burgermenu").addEventListener("click", toggleBurgermenu);
 
-     function burgerFarveskiftOver() {
-         document.querySelector(".bar1").classList.add("farveskift");
-         document.querySelector(".bar2").classList.add("farveskift");
-         document.querySelector(".bar3").classList.add("farveskift");
-     }
+    function burgerFarveskiftOver() {
+        document.querySelector(".bar1").classList.add("farveskift");
+        document.querySelector(".bar2").classList.add("farveskift");
+        document.querySelector(".bar3").classList.add("farveskift");
+    }
 
-     function burgerFarveskiftOut() {
-         document.querySelector(".bar1").classList.remove("farveskift");
-         document.querySelector(".bar2").classList.remove("farveskift");
-         document.querySelector(".bar3").classList.remove("farveskift");
-     }
+    function burgerFarveskiftOut() {
+        document.querySelector(".bar1").classList.remove("farveskift");
+        document.querySelector(".bar2").classList.remove("farveskift");
+        document.querySelector(".bar3").classList.remove("farveskift");
+    }
 
-     function toggleBurgermenu() {
-         document.querySelector(".burgermenu").classList.toggle("change");
-         document.querySelector(".burgermenu").classList.toggle("skrump");
-         document.querySelector(".sidemenu").classList.toggle("show");
-     }
- }
+    function toggleBurgermenu() {
+        document.querySelector(".burgermenu").classList.toggle("change");
+        document.querySelector(".burgermenu").classList.toggle("skrump");
+        document.querySelector(".sidemenu").classList.toggle("show");
+    }
+}
 
 
 
@@ -139,7 +162,9 @@ function visKontakt() {
 
     document.querySelector("[data-email]").textContent = kontakt.acf.email;
 
-    document.querySelector("[data-adresse]").textContent = kontakt.acf.adresse;
+    document.querySelector("[data-gade]").textContent = kontakt.acf.adresse;
+    document.querySelector("[data-postnr]").textContent = kontakt.acf.postnr_by;
+    document.querySelector("[data-land]").textContent = kontakt.acf.land;
 
     document.querySelector("[data-aabningstider]").innerHTML = kontakt.acf.åbningstider;
 
