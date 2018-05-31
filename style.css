@@ -24,7 +24,7 @@ a{
 }
 
 .header {
-    grid-column: 2/13;
+    grid-column: 1/14;
     grid-row: 1;
     height: 20vw;
 }
@@ -63,12 +63,11 @@ p {
 .logo {
     position: absolute;
     top: 2vw;
-    left: 34%;
+    left: 41%;
     height: 10vw;
     width: 20vw;
     background-image: url(assets/Logo/SVG/logo_bl%C3%A5_mix_med_beige_kant.svg);
     background-repeat: no-repeat;
-
     text-align: center;
 }
 
@@ -92,7 +91,7 @@ header{
     grid-column: 2/12;
     overflow: hidden;
     position: fixed;
-    width: 100%;
+/*    width: 100%;*/
     padding-bottom: 3vw;
 }
 
@@ -118,23 +117,19 @@ header{
 }
 
 #kollektioner{
-    grid-column: 1/2;
+    grid-column: 2/3;
 }
 
 #kurser{
-    grid-column: 3/4;
+    grid-column: 4/5;
 }
 
 #om{
-    grid-column: 8/9;
+    grid-column: 9/10;
 }
 
 #forhandler{
-    grid-column: 10/12;
-}
-
-#nyheder{
-    grid-column: 10/13;
+    grid-column: 11/13;
 }
 
 #hovedmenu a.active {
@@ -144,8 +139,8 @@ header{
 hr{
     border: solid 0.5px #144CAD;
     width: 30vw;
-    margin-left: 0vw;
     position: absolute;
+    left: 7.5vw;
     top: 10vw;
 }
 
@@ -161,9 +156,15 @@ hr{
     text-align: center;
 }
 
+/*
+.dropdown_kollektioner{
+    grid-column: 2;
+}
+
 .dropdown_kurser{
     grid-column: 3;
 }
+*/
 
 .dropbtn {
     font-size: 0.5em;
@@ -324,6 +325,39 @@ display: none;
 .kursusbillede {
     width: 100%;
     height: auto;
+}
+
+
+/* SLIDERE */
+
+/*NYHEDSLIDER*/
+
+#nyhedsslider {
+    grid-column: 2/13;
+    width: 825px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.prev_forside:hover,
+.next_forside:hover {
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+.nyhedsslide {
+    float: left;
+    list-style-type: none;
+    width: 530px;
+    height: 180px;
+}
+
+.nyhedsoverskrift {
+    position: relative;
+    top: 31vw;
+    padding: 1vw 0 1vw 15vw;
+    color: #fff;
+    z-index: 0;
+    background-color: rgba(111, 198, 180, 0.6);
 }
 
 

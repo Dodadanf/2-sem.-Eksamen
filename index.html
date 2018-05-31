@@ -22,11 +22,29 @@
 
         <main>
             <section class="main_indexgrid" data-liste>
+                <section id="nyhedsfeed" data-nyhedsfeed>
+                    <h1>Nyheder</h1>
+                    <div id="nyhedsslider" data-nyhedsslider>
+                        <a class="prev_forside">&#10094;</a>
+                        <a class="next_forside">&#10095;</a>
+                        <ul id="nyhedsslides" data-nyhedsslides>
+                        </ul>
+                    </div>
+                </section>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/myfYEUgeLpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </section>
         </main>
 
+        <template id="nyheder" data-nyheder>
+<!--Skal linkes til den specifikke nyhedsside + ordnes at den blinker til sidst-->
+            <li class="nyhedsslide" data-nyhedsslide>
+               <p class="nyhedsoverskrift" data-nyhedsoverskrift></p>
+                <img src="" alt="">
+            </li>
+        </template>
 
-<!--
+        <!--
         <section class="sidemenu">
         </section>
 -->
@@ -43,7 +61,99 @@
 
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="javascript.js"></script>
+    <script>
+        let jSonUrlNyheder = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/nyheder";
+        let nyheder = [];
+        let display = document.querySelector("[data-nyhedsslides]");
+        let template = document.querySelector("[data-nyheder]");
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJsonNyheder = await fetch(jSonUrlNyheder);
+            nyheder = await dataJsonNyheder.json();
+            visNyheder();
+        }
+
+        function visNyheder() {
+            nyheder.forEach(nyhed => {
+                let klon = template.cloneNode(true).content;
+                klon.querySelector("[data-nyhedsslide] p").textContent = nyhed.acf.nyhedstitel;
+                klon.querySelector("[data-nyhedsslide] img").src = nyhed.acf.nyhedsbillede.sizes.medium;
+                /*klon.querySelector("[data-nyhedsslide] img").alt = "Billede af " + nyhed.acf.billede_materiale.alt;*/
+                klon.querySelector("[data-nyhedsslide]").addEventListener("click", () => {
+                    location.href = "nyheder.html?id=" + nyhed.id;
+                });
+                display.appendChild(klon);
+            });
+            sliderNyheder();
+
+            function sliderNyheder() {
+                var width = 530;
+                var widthStor = 825;
+                var animationSpeed = 1200;
+                var pause = 5200;
+                var currentSlide = 1;
+                var $slider = $("#nyhedsslider");
+                var $slideContainer = $slider.find("#nyhedsslides");
+                var $slides = $slideContainer.find(".nyhedsslide");
+                var $tekst = $("#preview-tekst");
+
+                var mq = window.matchMedia('all and (min-width: 900px)');
+
+
+                setInterval(function() {
+                    if (mq.matches) {
+                        sliderSliderStor();
+                        document.querySelector(".next_forside").addEventListener("click", sliderSliderStor);
+                        document.querySelector(".prev_forside").addEventListener("click", sliderSliderTilbage);
+                    } else {
+                        sliderSlider();
+                        document.querySelector(".next_forside").addEventListener("click", sliderSlider);
+                        document.querySelector(".prev_forside").addEventListener("click", sliderSliderTilbage);
+                    }
+                }, pause);
+
+                function sliderSlider() {
+                    $($slideContainer).animate({
+                        "margin-left": "-=" + width
+                    }, animationSpeed, reset);
+                }
+
+                function sliderSliderTilbage() {
+                    $($slideContainer).animate({
+                        "margin-left": "+=" + width
+                    }, animationSpeed, reset);
+                }
+
+                function reset() {
+                    currentSlide++;
+                    if (currentSlide === $slides.length) {
+                        console.log("currentSlide = length");
+                        currentSlide = 1;
+                        $slideContainer.css({
+                            "margin-left": "0"
+                        });
+                    }
+                }
+
+                /** MEDIA QUIERY **/
+
+                function sliderSliderStor() {
+                    $($slideContainer).animate({
+                        "margin-left": "-=" + widthStor
+                    }, animationSpeed, reset);
+                }
+
+                function sliderSliderStorTilbage() {
+                    $($slideContainer).animate({
+                        "margin-left": "+=" + widthStor
+                    }, animationSpeed, reset);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
