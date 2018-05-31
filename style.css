@@ -385,8 +385,8 @@ display: none;
 blockquote{
     grid-row: 1;
     grid-column: 2;
-    margin: 42vw 10vw 7vw 20vw;
-    font-size: 1.2em;
+    margin: 39vw 7vw 7vw 20vw;
+    font-size: 1.5em;
     font-style: italic;
     color: #e2c7b5;
 }
@@ -398,7 +398,7 @@ blockquote{
     background-repeat:no-repeat;
     grid-row: 1;
     grid-column: 2;
-    margin: 47vw 0 0 30vw;
+    margin: 44vw 0 0 32vw;
 }
 
 @media all and (max-width: 1000px) {
