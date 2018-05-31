@@ -63,7 +63,7 @@ p {
 .logo {
     position: absolute;
     top: 2vw;
-    left: 32%;
+    left: 34%;
     height: 10vw;
     width: 20vw;
     background-image: url(assets/Logo/SVG/logo_bl%C3%A5_mix_med_beige_kant.svg);
@@ -96,7 +96,16 @@ header{
     padding-bottom: 3vw;
 }
 
+
+/** menupunkter **/
+
 #kollektioner, #kurser, #forhandler, #om, #nyheder{
+    color: #5777B3;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2em;
+
     text-align: center;
     padding-top: 6.3vw;
     grid-row: 1;
@@ -126,14 +135,6 @@ header{
 
 #nyheder{
     grid-column: 10/13;
-}
-
-#hovedmenu a {
-    color: #5777B3;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.2em;
 }
 
 #hovedmenu a.active {
