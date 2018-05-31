@@ -43,14 +43,15 @@ async function hentFastIndhold() {
 
         console.log(sidemenuData.text);
 
-        let sidemenu = await sidemenuData.text();
-        document.querySelector(".sidemenu").innerHTML = sidemenu;
+//        let sidemenu = await sidemenuData.text();
+//        document.querySelector(".sidemenu").innerHTML = sidemenu;
+//
     }
 
     else{
-        let sidemenuData = await fetch("sidemenu.html");
-        let sidemenu = await sidemenuData.text();
-        document.querySelector(".sidemenu").innerHTML = sidemenu;
+//        let sidemenuData = await fetch("sidemenu.html");
+//        let sidemenu = await sidemenuData.text();
+//        document.querySelector(".sidemenu").innerHTML = sidemenu;
     }
 
 

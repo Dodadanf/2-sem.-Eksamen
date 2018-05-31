@@ -24,8 +24,7 @@ a{
 }
 
 .header {
-/*    grid-template-columns: repeat(13, 1fr);*/
-    grid-column: 1/14;
+    grid-column: 2/13;
     grid-row: 1;
     height: 20vw;
 }
@@ -61,14 +60,15 @@ p {
 }
 
 
-
-
-.logo-billede {
-    height: 13vw;
+.logo {
+    position: absolute;
+    top: 2vw;
+    left: 32%;
+    height: 10vw;
     width: 20vw;
     background-image: url(assets/Logo/SVG/logo_bl%C3%A5_mix_med_beige_kant.svg);
     background-repeat: no-repeat;
-    margin: 1vw auto;
+
     text-align: center;
 }
 
@@ -76,48 +76,96 @@ p {
 /**************       Sidebare menuen         ***********/
 
  /*HOVEDMENU*/
-    .sidemenu {
-/*
-        grid-column: 1/13;
-        grid-row: 2;
-*/
-/*        text-transform: uppercase;*/
-/*        text-align: center;*/
-/*        margin-top: 20vw;*/
-        height: 100vh;
-        width: 22vw;
-        position: fixed;
-        overflow: visible;
-        border-right: solid #154CAD;
-/*        min-width: 100%;*/
-/*        background-color: #e2c7b5;*/
-/*        text-align: center;*/
-/*        background-color: #154CAD;*/
-    }
+
+/***********    top nav    ***********/
+
+#hovedmenu {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 2/12;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    padding-bottom: 3vw;
+}
+
+#kollektioner, #kurser, #forhandler, #om, #nyheder{
+    text-align: center;
+    padding-top: 6.3vw;
+    grid-row: 1;
+}
+
+#kollektioner:hover, #kurser:hover, #forhandler:hover, #om:hover, #nyheder:hover{
+    color: #e2c7b5;
+    transition: 0.2s ease-in;
+    transform: scale(1.1);
+}
+
+#kollektioner{
+    grid-column: 1/2;
+}
+
+#kurser{
+    grid-column: 3/4;
+}
+
+#om{
+    grid-column: 8/9;
+}
+
+#forhandler{
+    grid-column: 10/12;
+}
+
+#nyheder{
+    grid-column: 10/13;
+}
+
+#hovedmenu a {
+    color: #5777B3;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#hovedmenu a.active {
+    background-color: #e2c7b5;
+}
+
+hr{
+    grid-column: 1/5;
+    border: solid 0.5px #144CAD;
+    width: 30vw;
+    margin-left: 0vw;
+}
+
+
+/**** DROP DOWN KNAPPER ****/
+
+.dropdown_kollektion, .dropdown_kurser{
+    grid-row: 2;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown_kurser{
+    grid-column: 3;
+}
 
 .dropbtn {
-    width: 22vw;
-    color: #fff;
-    font-family: 'Rozha One', serif;
+    font-size: 0.5em;
+    margin: 0;
     color: #154CAD;
     background-color: transparent;
-    padding: 1vw;
-    font-size: 2em;
     border: none;
     cursor: pointer;
-    text-align: left;
-    padding-left: 1vw;
 }
 
-.dropdown_kollektion{
-    padding-top: 20vw;
-}
-
-    .dropbtn:hover {
-        background-color: rgba(21, 76, 173, 0.95);
-/*        border: solid 4px #f1ede4;*/
-        transition: 0s;
-        color: rgba(226, 199, 181, 0.94);
+.dropbtn:hover {
+    color: #e2c7b5;
+    transition: 1s ease-in;
     }
 
 /*Kan vi lave dette så det kun virker når den er åben?*/
@@ -135,7 +183,7 @@ display: none;
 
 .dropdown-content {
     display: none;
-  background-color:transparent;
+    background-color:transparent;
     min-width: 160px;
     overflow: auto;
 
@@ -143,14 +191,12 @@ display: none;
 }
 
 .dropdown-content button{
+/*    position: absolute;*/
     background-color: transparent;
     color: #E2C7B5;
-    width: 100%;
-    text-align: left;
+    display: block;
     padding: 1vw 0 1vw 5vw;
-        text-transform: uppercase;
-/*    border-bottom: dashed 1pt  #fff;*/
-/*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);*/
+    text-transform: uppercase;
 }
 
 
@@ -169,6 +215,26 @@ display: none;
     display: block;
 }
 
+    .sidemenu {
+/*
+        grid-column: 1/13;
+        grid-row: 2;
+*/
+/*        text-transform: uppercase;*/
+/*        text-align: center;*/
+/*        margin-top: 20vw;*/
+/*
+        height: 100vh;
+        width: 22vw;
+        position: fixed;
+        overflow: visible;
+        border-right: solid #154CAD;
+*/
+/*        min-width: 100%;*/
+/*        background-color: #e2c7b5;*/
+/*        text-align: center;*/
+/*        background-color: #154CAD;*/
+    }
 
 /***********    footer    ************/
 
@@ -178,38 +244,6 @@ display: none;
     flex-wrap: wrap;
     justify-content: space-around;
 */
-}
-
-
-
-/***********    top nav    ***********/
-
-#hovedmenu {
-    overflow: hidden;
-    width: 100%;
-    margin-left: 58vw;
-    padding-bottom: 1vw;
-}
-
-#hovedmenu a {
-    color: #f2f2f2;
-    text-align: center;
-    padding: 0 2.5vw;
-    text-decoration: none;
-    font-size: 0.9em;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
-}
-
-#hovedmenu a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-#hovedmenu a.active {
-    background-color: #ddd;
-    color: black;
-
 }
 
 
