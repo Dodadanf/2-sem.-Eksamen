@@ -79,7 +79,13 @@ p {
 
 /***********    top nav    ***********/
 
+header{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+
 #hovedmenu {
+    grid-column: 2/13;
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -135,12 +141,16 @@ p {
 }
 
 hr{
-    grid-column: 1/5;
     border: solid 0.5px #144CAD;
     width: 30vw;
     margin-left: 0vw;
+    position: absolute;
+    top: 10vw;
 }
 
+.headerline2{
+    left: 61.5vw;
+}
 
 /**** DROP DOWN KNAPPER ****/
 
