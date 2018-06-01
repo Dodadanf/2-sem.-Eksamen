@@ -351,7 +351,8 @@ hr {
 
 .dropdown-content {
     display: none;
-    background-color: transparent;
+    background-color: #f8f4f1;
+/*    border: solid #154cad;*/
     min-width: 160px;
     overflow: auto;
     position: relative;
@@ -365,6 +366,9 @@ hr {
     color: #E2C7B5;
     display: block;
     text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+    border-bottom: solid 1px;
 }
 
 
@@ -551,6 +555,7 @@ footer {
 
 #nyheder{
     cursor: pointer;
+    z-index: -1;
 }
 
 #nyheder:hover{
@@ -686,15 +691,15 @@ blockquote {
     }
 
     .dropdown-content button {
-        background-color: transparent;
+        background-color: #f8f4f1;
         color: #fff;
-        width: 100%;
+
         /*text-align: left;*/
         padding: 1vw 0 1vw 10vw;
         text-transform: uppercase;
         /*    border-bottom: dashed 1pt  #fff;*/
         /*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);*/
-        height: 10vw;
+        height: 20vw;
     }
 
 
@@ -788,11 +793,10 @@ blockquote {
         margin: 20px 0;
         color: #fff;
         font-size: 5vw;
-        transition: 0.2s ease-in;
     }
 
     .dropbtn button:hover {
-        color: #3456a6;
+        color: #e2c7b5;
     }
 
     #hovedmenu {
