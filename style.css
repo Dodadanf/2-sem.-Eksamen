@@ -53,7 +53,7 @@ h2 {
 h3 {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.7em;
-    margin: 1vw 0 1vw 0;
+    margin: 1vw 0 0vw 0;
 /*    text-align: center;*/
     color: #e2c7b5;
     font-style: normal;
@@ -90,7 +90,9 @@ p {
     height: 5vw;
     background-color: #154cad;
     background-image: url(assets/Ikoner/nyheds_ikon.svg);
+    background-size: 50%;
     background-repeat: no-repeat;
+    background-position: 10%;
 
     animation-name: komFrem;
     animation-duration: 0.8s;
@@ -98,6 +100,12 @@ p {
     animation-timing-function: ease-in-out;
     animation-delay: 1s;
     animation-iteration-count: 1;
+    transition: 0.5s ease-in-out;
+}
+
+#nyhedsbrev:hover{
+    transform: scale(1.1);
+
 }
 
 @keyframes komFrem{
@@ -110,8 +118,37 @@ p {
     }
 }
 
+#header_nyhedsbrev{
+    margin-top: 3vw;
+    color: #f1f8f4;
+    text-align: center;
+}
+
+input[type=text], input[type=email]{
+    margin: 2% 0 0 10%;
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    border: none;
+    font-family: 'Open sans', sans-serif;
+    text-transform: uppercase;
+
+}
+
+input[type=submit]{
+    width: 70%;
+    margin: 5% 0 0 15%;
+/*    border: none;*/
+    height: 30px;
+    background-color: #f1a6a3;
+    color: #f1f8f4;
+    font-family: 'Open sans', sans-serif;
+    text-transform: uppercase;
+}
+
 .popup {
     position: absolute;
+    top: 0vw;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -119,30 +156,32 @@ p {
     position: fixed;
     visibility: hidden;
     z-index: 1000;
-    top: 0;
-    background-color: rgba(239, 221, 208, 0.85);
+    background-color: rgba(0, 0, 0, 0.28);
 }
 
 .popup-content {
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    left: 29.3%;
     color: #fff;
     position: absolute;
+    background-color: #b0d3d7;
 }
 
 .close-button {
     position: absolute;
-    top: 1vw;
-    left: 96vw;
+    top: 32%;
+    left: 66%;
     border-radius: 50%;
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #b0d3d7;
+    background-color: #5777b2;
     border-color: transparent;
     padding: 0.2vw;
-    width: 3vw;
-    height: 3vw;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -152,21 +191,25 @@ p {
 }
 
 .close_bar1 {
-    width: 1.5vw;
+    position: absolute;
+    width: 1vw;
     height: 1.1px;
     background-color: #fff;
     border-radius: 10px;
     margin: 0.9vw auto;
-    transform: rotate(45deg) translate(4px, 2px);
+/*    transform-origin: center;*/
+    transform: rotate(45deg) translate(-6px, -12px);
 }
 
 .close_bar2 {
-    width: 1.5vw;
+    position: absolute;
+    width: 1vw;
     height: 1.1px;
     background-color: #fff;
     border-radius: 10px;
     margin: 0.9vw auto;
-    transform: rotate(-45deg) translate(7px, -5px);
+    transform-origin: center;
+    transform: rotate(-45deg) translate(12px, -6px);
 }
 
 .popup-billedecontainer {
@@ -403,20 +446,21 @@ footer {
 }
 
 #kontakt {
-    grid-column: 9/11;
+    grid-column: 11/11;
     grid-row: 2;
 }
 
 #some_container{
     grid-row: 2;
     width: 16vw;
-    height: 6vw;
+    height: 4vw;
     grid-column: 12;
+    text-align: center;
 }
 
 .some_links {
-    width: 5.5vw;
-    height: 5.5vw;
+    width: 4vw;
+    height: 4vw;
     margin: 3.5vw 1vw 3.5vw 1vw;
     background-size: cover;
 }
@@ -503,6 +547,10 @@ footer {
     height: 100%;
     border: 0;
     margin: 1vw;
+}
+
+#nyheder{
+    cursor: pointer;
 }
 
 #nyheder:hover{

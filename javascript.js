@@ -39,7 +39,7 @@ async function hentFastIndhold() {
 
     let nyhedsbrevData = await fetch("nyhedsbrev.html");
     let nyhedsbrev = await nyhedsbrevData.text();
-    document.querySelector("#nyhedsbrev").innerHTML = nyhedsbrev;
+    document.querySelector("#nyhedsbrev_container").innerHTML = nyhedsbrev;
 
     document.querySelector("[data-nyhedsbrev]").addEventListener("click", openPopup);
 
@@ -75,16 +75,15 @@ function openPopup() {
 
 //    document.querySelector("[data-billede]").src = sliderImageMenukort;
 //    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
+
+    document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
 }
 
 
 
-document.querySelector("[data-close-button]").addEventListener("click", closePopup);
-
 function closePopup() {
+    console.log("halla");
     document.querySelector(".popup").style.visibility = "hidden";
-
-
 }
 
 function visKollektioner() {
