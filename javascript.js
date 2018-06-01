@@ -5,13 +5,14 @@ let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen
 let kollektioner = [];
 
 
-document.addEventListener("DOMContentLoaded", hentJson, komFrem);
+document.addEventListener("DOMContentLoaded", hentJson);
 
 
 
 // ASYNC FUNCTIONS - HENT INDHOLD
 
 async function hentJson() {
+
     let dataJson = await fetch(jSonUrl);
     kontakt = await dataJson.json();
 
@@ -23,10 +24,6 @@ async function hentJson() {
 
 };
 
-function komFrem(){
-        document.querySelector("[data-nyhedsbrev]").classList.add("komfrem");
-    }
-
 async function hentFastIndhold() {
 
     var mq = window.matchMedia('all and (max-width: 900px)');
@@ -34,6 +31,7 @@ async function hentFastIndhold() {
     let headerData = await fetch("header.html");
     let header = await headerData.text();
     document.querySelector(".header").innerHTML = header;
+    document.querySelector("[data-logo]").style.backgroundImage = "url("+kontakt.acf.logo.url+")";
 
     let footerData = await fetch("footer.html");
     let footer = await footerData.text();
