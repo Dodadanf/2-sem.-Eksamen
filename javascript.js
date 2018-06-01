@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", hentJson);
 // ASYNC FUNCTIONS - HENT INDHOLD
 
 async function hentJson() {
+
     let dataJson = await fetch(jSonUrl);
     kontakt = await dataJson.json();
 
@@ -20,7 +21,6 @@ async function hentJson() {
     kollektioner = await dataJsonKollektioner.json();
 
     hentFastIndhold();
-
 
 };
 
@@ -31,6 +31,7 @@ async function hentFastIndhold() {
     let headerData = await fetch("header.html");
     let header = await headerData.text();
     document.querySelector(".header").innerHTML = header;
+    document.querySelector("[data-logo]").style.backgroundImage = "url("+kontakt.acf.logo.url+")";
 
     let footerData = await fetch("footer.html");
     let footer = await footerData.text();
@@ -75,6 +76,8 @@ function openPopup() {
 //    document.querySelector("[data-billede]").src = sliderImageMenukort;
 //    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
 }
+
+
 
 document.querySelector("[data-close-button]").addEventListener("click", closePopup);
 
@@ -168,5 +171,5 @@ function visKontakt() {
 
     document.querySelector("[data-aabningstider]").innerHTML = kontakt.acf.åbningstider;
 
-    /*document.querySelector("[data-cvr]").textContent = "Tlf. " + kontakt.acf.cvr;*/
+    document.querySelector("[data-cvr]").textContent = "CVR: " + kontakt.acf.cvr;
 };
