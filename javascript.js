@@ -60,8 +60,8 @@ async function hentFastIndhold() {
     }
 
 
-    visKontakt();
-    visKollektioner();
+    visFooter();
+    visMenu();
     burgermenu();
 
 }
@@ -82,11 +82,10 @@ function openPopup() {
 
 
 function closePopup() {
-    console.log("halla");
     document.querySelector(".popup").style.visibility = "hidden";
 }
 
-function visKollektioner() {
+function visMenu() {
     kollektioner.forEach(kollektion => {
 
         let display = document.querySelector("[data-menu]");
@@ -159,7 +158,9 @@ function burgermenu() {
 // FOOTER
 
 
-function visKontakt() {
+function visFooter() {
+
+
     document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
 
     document.querySelector("[data-email]").textContent = kontakt.acf.email;
