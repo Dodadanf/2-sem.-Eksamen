@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schjødts - Unika keramik</title>
     <meta name="description" content="Velkommen til Schjødts Keramiks univers. En verden af feminin, unika keramik præget af kærlighed til håndværket.">
@@ -13,12 +13,12 @@
 </head>
 
 <body>
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     <div class="main_grid">
         <section class="header">
         </section>
 
-         <div id="nyhedsbrev" data-nyhedsbrev>
+        <div id="nyhedsbrev" data-nyhedsbrev>
 
         </div>
 
@@ -31,9 +31,9 @@
         </main>
 
         <template data-kollektionertemplate>
-            <article>
-                <h3 data-titel></h3>
-                <img src="" alt="" data-billede>
+            <article class="kollektion_container">
+                <button class="kollektion" src="" alt="" data-kollektion></button>
+                <div class="kollektionsnavn" data-kollektionsnavn></div>
             </article>
         </template>
 
@@ -49,20 +49,39 @@
 
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", visKollektioner);
+        let jSonUrlKollektionerListe = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner/";
 
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+
+            let dataJsonKollektioner = await fetch(jSonUrlKollektionerListe);
+            kollektioner = await dataJsonKollektioner.json();
+
+            visKollektioner();
+
+        };
 
 
         function visKollektioner() {
+            console.log(kollektioner);
             kollektioner.forEach(kollektion => {
                 let display = document.querySelector("[data-kollektionsliste]");
                 let template = document.querySelector("[data-kollektionertemplate]");
                 let klon = template.cloneNode(true).content;
                 console.log(kollektion);
-                klon.querySelector("[data-titel]").textContent = kollektion.acf.kollektionens_navn;
-                /*klon.querySelector("[data-billede]").src = kollektion.acf.kollektionsbillede.sizes.medium;*/
-                display.appendChild(klon);
 
+                klon.querySelector("[data-kollektion]").style.backgroundImage = "url('" + kollektion.acf.kollektionsbillede.sizes.large + "')";
+
+
+                klon.querySelector("[data-kollektion]").alt = kollektion.acf.kollektionsbillede.alt;
+
+                klon.querySelector("[data-kollektionsnavn]").textContent = kollektion.acf.kollektionens_navn;
+
+                klon.querySelector("[data-kollektion]").addEventListener("click", () => {
+                    location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
+                });
+                display.appendChild(klon);
             });
         };
     </script>

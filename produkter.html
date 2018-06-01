@@ -29,9 +29,13 @@
 
         <main>
             <section class="kollektionsheader">
-                <h1 class="kollektionsoverskrift" data-kollektionsheader> </h1>
-                <img class="kollektionssplash" src="" alt="" data-kollektionsheaderimg>
+
+                <button class="kollektionssplash" src="" alt="" data-kollektionsheaderimg></button>
+                <div class="kollektionsnavn" data-kollektionsheader></div>
+
             </section>
+
+
 
 
             <section class="produktslider">
@@ -128,8 +132,11 @@
 
             console.log(produktFilter);
 
-            document.querySelector("[data-kollektionsheaderimg]").src = produktFilter[0].acf.splash.sizes.large;
-            document.querySelector("[data-kollektionsheader]").textContent = produktFilter[0].acf.produkt_kollektion;
+//            document.querySelector("[data-kollektionsheaderimg]").src = produktFilter[0].acf.splash.sizes.large;
+
+             document.querySelector("[data-kollektionsheaderimg]").style.backgroundImage = "url('" + produktFilter[0].acf.splash.sizes.large + "')";
+
+            document.querySelector("[data-kollektionsheader]").textContent = produktFilter[0].acf.beskrivelse_af_produkt;
 
             document.querySelector("[data-produktpreview]").src = produktFilter[0].acf.billede_af_produktet.sizes.large;
 
