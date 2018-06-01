@@ -88,7 +88,7 @@
 
                     let geocoder = new google.maps.Geocoder();
                     geocoder.geocode({
-                        'address': kontakt.acf.adresse
+                        'address': kontakt.acf.adresse + ", " + kontakt.acf.postnr_by
                     }, function(results, status) {
 
                         if (status == 'OK') {
