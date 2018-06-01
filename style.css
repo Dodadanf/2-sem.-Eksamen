@@ -74,6 +74,11 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    transition: 0.5s ease-in-out;
+}
+
+.logo:hover{
+    transform: scale(1.04);
 }
 
 
@@ -355,7 +360,7 @@ hr {
 /*    border: solid #154cad;*/
     min-width: 160px;
     overflow: auto;
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 
@@ -542,6 +547,27 @@ footer {
 
 /* FORSIDE */
 
+
+.frame_container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+#nyheder_container {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: -1;
+}
+
+.nyheder_container2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
 #baggrundsvideo {
     position: absolute;
     top: 0;
@@ -629,6 +655,27 @@ blockquote {
     margin: 0.5vw 0 1vw auto;
 }
 
+
+/*** PRODUKTER ***/
+
+.produktslider {
+    width: 100%;
+}
+
+.gallery {
+    width: 100%;
+}
+
+.galleryImg {
+    width: 25%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.galleryImg:hover {
+    opacity: 0.5;
+
+}
 
 
 @media all and (max-width: 1000px) {
@@ -804,41 +851,3 @@ blockquote {
     }
 }
 
-
-#nyheder_container {
-    grid-column: 1;
-    grid-row: 1;
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.nyheder_container2 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.frame_container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-}
-
-.produktslider {
-    width: 100%;
-}
-
-.gallery {
-    width: 100%;
-}
-
-.galleryImg {
-    width: 25%;
-    height: auto;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.galleryImg:hover {
-    opacity: 0.5;
-
-}
