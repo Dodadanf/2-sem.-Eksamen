@@ -2,7 +2,7 @@
 <html lang="da">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
@@ -24,7 +24,21 @@
         <main>
             <section class="produktliste" data-liste>
             </section>
+
+
+            <section class="produktslider">
+                <div class="produktpreview">
+                    <img src="" alt="" data-produktpreview>
+                </div>
+                <div class="gallery" data-gallery>
+
+                </div>
+            </section>
         </main>
+
+        <template data-tempgallery>
+            <img class="galleryImg" src="" data-galleryImg style="cursor:pointer">
+        </template>
 
 
         <section class="sidemenu">
@@ -74,11 +88,12 @@
                 console.log(koll);
             });
 
-            visProdukter(koll);
+            /*visProdukter(koll);*/
+            visGallery(koll)
         };
 
 
-        function visProdukter(prod) {
+        /*function visProdukter(prod) {
             prod.forEach(produkt => {
                 let display = document.querySelector("[data-liste]");
                 let template = document.querySelector("[data-template]");
@@ -87,6 +102,30 @@
                 klon.querySelector("[data-produktnavn]").textContent = produkt.acf.produkt_navn;
                 klon.querySelector("[data-produktbillede]").src = produkt.acf.billede_af_produktet.sizes.medium;
                 klon.querySelector("[data-produktbillede]").alt = produkt.acf.produkt_navn;
+                klon.querySelector("[data-produktbillede]")
+                display.appendChild(klon);
+
+            });
+        };*/
+
+
+
+        function visGallery(gal) {
+
+            console.log(koll);
+
+            document.querySelector("[data-produktpreview]").src = koll[0].acf.billede_af_produktet.sizes.large;
+
+            gal.forEach(produkt => {
+                let display = document.querySelector("[data-gallery]");
+                let template = document.querySelector("[data-tempgallery]");
+                let klon = template.cloneNode(true).content;
+                console.log(produkt);
+                klon.querySelector("[data-galleryImg]").src = produkt.acf.billede_af_produktet.sizes.large;
+                klon.querySelector("[data-galleryImg]").alt = produkt.acf.produkt_navn;
+                klon.querySelector("[data-galleryImg]").addEventListener("click", () => {
+                    document.querySelector("[data-produktpreview]").src = produkt.acf.billede_af_produktet.sizes.large;
+                });
                 display.appendChild(klon);
 
             });
