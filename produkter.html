@@ -22,7 +22,9 @@
 
 
         <main>
-            <section class="produktliste" data-liste>
+            <section class="kollektionsheader">
+                <h1 class="kollektionsoverskrift" data-kollektionsheader></h1>
+                <!--<img src="" alt="" data-kollektionsheaderimg>-->
             </section>
 
 
@@ -69,6 +71,7 @@
         let jSonUrlProdukter = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/produkter"
         let produkter = [];
         let koll;
+        let kol;
         let url = new URL(window.location.href);
         let searchParams = new URLSearchParams(url.search);
         let kolle = searchParams.get("kollektion");
@@ -83,30 +86,33 @@
             let dataJsonProdukter = await fetch(jSonUrlProdukter);
             produkter = await dataJsonProdukter.json();
 
+
+
+            /************      filtrer produkterne        ***************/
+
             koll = produkter.filter(function(e) {
                 return e.acf.produkt_kollektion.includes(kolle);
                 console.log(koll);
             });
 
-            /*visProdukter(koll);*/
-            visGallery(koll)
+
+            /************      filtrer kollektionsheaderen        ***************/
+
+
+            kol = kollektioner.filter(function(e) {
+                return e.acf.kollektionens_url_input.includes(kolle);
+                console.log(kol);
+            });
+
+            /************      kører kollektionsheaderen- og produktslider funktionerne        ***************/
+
+
+            visKollektion(kol);
+            visGallery(koll);
         };
 
 
-        /*function visProdukter(prod) {
-            prod.forEach(produkt => {
-                let display = document.querySelector("[data-liste]");
-                let template = document.querySelector("[data-template]");
-                let klon = template.cloneNode(true).content;
-                console.log(produkt);
-                klon.querySelector("[data-produktnavn]").textContent = produkt.acf.produkt_navn;
-                klon.querySelector("[data-produktbillede]").src = produkt.acf.billede_af_produktet.sizes.medium;
-                klon.querySelector("[data-produktbillede]").alt = produkt.acf.produkt_navn;
-                klon.querySelector("[data-produktbillede]")
-                display.appendChild(klon);
 
-            });
-        };*/
 
 
 
@@ -129,6 +135,16 @@
                 display.appendChild(klon);
 
             });
+        };
+
+
+        function visKollektion(gal) {
+            console.log(kol);
+
+            /*document.querySelector("[data-kollektionsheaderimg]").src = kollektioner.acf.kollektionsbillede.sizes.large;*/
+            document.querySelector("[data-kollektionsheader]").textContent = kol[0].acf.kollektionens_navn;
+
+
         };
     </script>
 </body>
