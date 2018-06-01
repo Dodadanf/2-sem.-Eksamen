@@ -469,7 +469,7 @@ footer {
 
 #some_container{
     grid-row: 2;
-    width: 16vw;
+    width: 25vw;
     height: 4vw;
     grid-column: 12;
     text-align: center;
@@ -482,15 +482,6 @@ footer {
     background-size: cover;
 }
 
-#facebook {
-    background-image: url(assets/Ikoner/some/baige_fb_ikon.png);
-}
-
-#instagram {
-    background-image: url(assets/Ikoner/some/baige_insta_ikon.png);
-
-}
-
 /************     maps     *************/
 
 #map {
@@ -498,8 +489,6 @@ footer {
     margin: 0 0 2vw 0;
     height: 40vw;
 }
-
-
 
 /**********      produkt opsætning ************/
 
