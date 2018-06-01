@@ -5,7 +5,7 @@ let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen
 let kollektioner = [];
 
 
-document.addEventListener("DOMContentLoaded", hentJson);
+document.addEventListener("DOMContentLoaded", hentJson, komFrem);
 
 
 
@@ -21,8 +21,11 @@ async function hentJson() {
 
     hentFastIndhold();
 
-
 };
+
+function komFrem(){
+        document.querySelector("[data-nyhedsbrev]").classList.add("komfrem");
+    }
 
 async function hentFastIndhold() {
 

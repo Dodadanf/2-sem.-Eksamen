@@ -83,11 +83,16 @@ p {
 #nyhedsbrev {
     position: absolute;
     top: 50%;
-    left: 93vw;
+    left: 100vw;
     border-radius: 10px;
-    width: 15vw;
+    width: 10vw;
     height: 5vw;
-    background-color: #b05;
+    background-color: #154cad;
+    background-image: url(assets/Ikoner/mail.svg);
+}
+
+.komfrem{
+    left: 96vw;
 }
 
 .popup {
@@ -348,7 +353,7 @@ hr {
     grid-row: 3;
     background-color: #5777b2;
     color: #f8f4f1;
-    padding: 1vw 0 1vw 0;
+    padding: 0vw 0 1vw 0;
     font-size: 0.8em;
 }
 
@@ -363,22 +368,32 @@ footer {
     grid-row: 4;
 }
 
+#footer_kant{
+    grid-row: 1;
+    grid-column: 1/14;
+    height:3.7vw;
+    background-image: url(assets/Striben/multi.svg);
+    background-size: cover;
+}
+
 #adresse {
     grid-column: 2/4;
+    grid-row: 2;
     font-style: normal;
 }
 
 #aabningstider {
     grid-column: 4/7;
+    grid-row: 2;
 }
 
 #kontakt {
     grid-column: 9/11;
+    grid-row: 2;
 }
 
-
-
 #some_container{
+    grid-row: 2;
     width: 16vw;
     height: 6vw;
     grid-column: 12;
