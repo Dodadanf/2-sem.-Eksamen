@@ -13,14 +13,14 @@
 </head>
 
 <body>
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     <div class="main_grid">
 
 
         <section class="header">
         </section>
 
-         <div id="nyhedsbrev" data-nyhedsbrev>
+        <div id="nyhedsbrev" data-nyhedsbrev>
 
         </div>
 
@@ -29,8 +29,8 @@
 
         <main>
             <section class="kollektionsheader">
-                <h1 class="kollektionsoverskrift" data-kollektionsheader></h1>
-                <!--<img src="" alt="" data-kollektionsheaderimg>-->
+                <h1 class="kollektionsoverskrift" data-kollektionsheader> </h1>
+                <img class="kollektionssplash" src="" alt="" data-kollektionsheaderimg>
             </section>
 
 
@@ -75,47 +75,50 @@
     <script>
         let jSonUrlProdukter = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/produkter"
         let produkter = [];
-        let koll;
-        let kol;
+        let produktFilter;
+        //        let kollektionFilter;
         let url = new URL(window.location.href);
         let searchParams = new URLSearchParams(url.search);
         let kolle = searchParams.get("kollektion");
 
-        document.addEventListener("DOMContentLoaded", hentJson);
 
-        async function hentJson() {
 
-            console.log("hej ");
+        document.addEventListener("DOMContentLoaded", hentJsoneee);
 
-            console.log(kolle);
+
+
+
+        async function hentJsoneee() {
+
+
             let dataJsonProdukter = await fetch(jSonUrlProdukter);
             produkter = await dataJsonProdukter.json();
 
-
+            console.log([produkter]);
 
             /************      filtrer produkterne        ***************/
+            filtre();
 
-            koll = produkter.filter(function(e) {
+            /************      kører kollektionsheaderen- og produktslider funktionerne        ***************/
+
+
+        };
+
+        function filtre() {
+            produktFilter = produkter.filter(function(e) {
                 return e.acf.produkt_kollektion.includes(kolle);
-                console.log(koll);
+                console.log([koll]);
             });
 
 
             /************      filtrer kollektionsheaderen        ***************/
 
 
-            kol = kollektioner.filter(function(e) {
-                return e.acf.kollektionens_url_input.includes(kolle);
-                console.log(kol);
-            });
 
-            /************      kører kollektionsheaderen- og produktslider funktionerne        ***************/
+            visGallery(produktFilter);
 
 
-            visKollektion(kol);
-            visGallery(koll);
-        };
-
+        }
 
 
 
@@ -123,9 +126,12 @@
 
         function visGallery(gal) {
 
-            console.log(koll);
+            console.log(produktFilter);
 
-            document.querySelector("[data-produktpreview]").src = koll[0].acf.billede_af_produktet.sizes.large;
+            document.querySelector("[data-kollektionsheaderimg]").src = produktFilter[0].acf.splash.sizes.large;
+            document.querySelector("[data-kollektionsheader]").textContent = produktFilter[0].acf.produkt_kollektion;
+
+            document.querySelector("[data-produktpreview]").src = produktFilter[0].acf.billede_af_produktet.sizes.large;
 
             gal.forEach(produkt => {
                 let display = document.querySelector("[data-gallery]");
@@ -143,14 +149,13 @@
         };
 
 
-        function visKollektion(gal) {
-            console.log(kol);
+        /* function visKollektionsheader() {
 
-            /*document.querySelector("[data-kollektionsheaderimg]").src = kollektioner.acf.kollektionsbillede.sizes.large;*/
-            document.querySelector("[data-kollektionsheader]").textContent = kol[0].acf.kollektionens_navn;
+             document.querySelector("[data-kollektionsheaderimg]").src = kollektioner.acf.kollektionsbillede.sizes.large;
+             document.querySelector("[data-kollektionsheader]").textContent = kollektionFilter.acf.kollektionens_navn;
 
+         }*/
 
-        };
     </script>
 </body>
 
