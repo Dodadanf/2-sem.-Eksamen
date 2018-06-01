@@ -332,7 +332,7 @@ hr {
 
 .dropbtn:hover {
     color: #e2c7b5;
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
 }
 
 /*Kan vi lave dette så det kun virker når den er åben?*/
@@ -356,7 +356,6 @@ hr {
     min-width: 160px;
     overflow: auto;
     position: relative;
-
     z-index: 1;
 }
 
@@ -796,7 +795,7 @@ blockquote {
     }
 
     .dropbtn button:hover {
-        color: #e2c7b5;
+        color: #154cad;
     }
 
     #hovedmenu {
