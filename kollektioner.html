@@ -52,6 +52,7 @@
         document.addEventListener("DOMContentLoaded", visKollektioner);
 
 
+
         function visKollektioner() {
             kollektioner.forEach(kollektion => {
                 let display = document.querySelector("[data-kollektionsliste]");
@@ -59,7 +60,7 @@
                 let klon = template.cloneNode(true).content;
                 console.log(kollektion);
                 klon.querySelector("[data-titel]").textContent = kollektion.acf.kollektionens_navn;
-                /*klon.querySelector("[data-produktbillede]").src = kollektion.acf.kollektionsbillede.sizes.medium;*/
+                /*klon.querySelector("[data-billede]").src = kollektion.acf.kollektionsbillede.sizes.medium;*/
                 display.appendChild(klon);
 
             });
