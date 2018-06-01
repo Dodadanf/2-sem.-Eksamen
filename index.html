@@ -25,23 +25,25 @@
         <main>
             <section class="main_indexgrid" data-liste>
 
-                   <div id="nyheder_container">
+                <div id="nyheder_container">
                     <img id="nyheder" data-nyheder>
-                    </div>
                     <h1 id="nyheder_header">Nyheder</h1>
                     <h2 id="nyheder_underheader"></h2>
+                </div>
 
-                     <h2 id="univers">i mit univers</h2>
-                <h1 id="velkommen">Velkommen</h1>
+                <div class="nyheder_container2">
+                    <h1 id="velkommen">Velkommen</h1>
+                    <h2 id="univers">i mit univers</h2>
+                    <div class="frame_container">
+                        <iframe id="baggrundsvideo" width="100%" height="" src="https://www.youtube.com/embed/myfYEUgeLpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
 
+                    <blockquote cite="schjoedts.dk/index.html">"Jeg skaber papirtynde objekter i porcelæn - funktionelle såvel som unikke værker"</blockquote>
 
-                <iframe id="baggrundsvideo" width="100%" height="415" src="https://www.youtube.com/embed/myfYEUgeLpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div id="signatur"></div>
+                </div>
 
-                <blockquote cite="schjoedts.dk/index.html">Jeg skaber papirtynde objekter i porcelæn - funktionelle såvel som unikke værker</blockquote>
-
-               <div id="signatur"></div>
-
-                </section>
+            </section>
         </main>
 
         <!--
@@ -64,7 +66,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="javascript.js"></script>
     <script>
-
         let jSonUrlNyheder = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/nyheder/28";
         let nyheder;
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -76,10 +77,9 @@
         }
 
         function hentIndholdForside() {
-            document.querySelector("[data-nyheder]").src=nyheder.acf.nyhedsbillede.sizes.large;
-            document.querySelector("#nyheder_underheader").textContent=nyheder.acf.nyhedstitel;
-                }
-
+            document.querySelector("[data-nyheder]").src = nyheder.acf.nyhedsbillede.sizes.large;
+            document.querySelector("#nyheder_underheader").textContent = nyheder.acf.nyhedstitel;
+        }
     </script>
 </body>
 
