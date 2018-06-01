@@ -54,8 +54,8 @@ h2 {
 
 h3 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.7em;
-    margin: 1vw 0 0vw 0;
+    font-size: 1em;
+    margin: 1vw 0 0.5vw 0;
 /*    text-align: center;*/
     color: #e2c7b5;
     font-style: normal;
@@ -426,9 +426,9 @@ hr {
 .footer {
     grid-column: 1/14;
     grid-row: 3;
-    background-color: #5777b2;
-    color: #f8f4f1;
-    padding: 0vw 0 1vw 0;
+/*    background-color: #5777b2;*/
+    color: #e2c7b5;
+    padding: 0vw 0 1.3vw 0;
     font-size: 0.8em;
 }
 
@@ -452,34 +452,54 @@ footer {
 }
 
 #adresse {
-    grid-column: 2/4;
+    grid-column: 5/7;
     grid-row: 2;
     font-style: normal;
+/*    padding-left: 40px;*/
 }
 
 #aabningstider {
-    grid-column: 4/7;
+    grid-column: 6/8;
     grid-row: 2;
+    padding-left: 30px;
 }
 
-#kontakt {
-    grid-column: 11/11;
-    grid-row: 2;
+#aabningstider_header{
+    width: 20px;
+}
+
+#tider{
+    width: 200px;
 }
 
 #some_container{
     grid-row: 2;
-    width: 25vw;
-    height: 4vw;
-    grid-column: 12;
+    width: 10vw;
+    height: 1vw;
+    grid-column:9;
+    text-align: center;
+}
+
+#kontakt_container{
+    grid-row: 2;
+    width: 15vw;
+    height: 1vw;
+    grid-column: 8;
     text-align: center;
 }
 
 .some_links {
-    width: 4vw;
-    height: 4vw;
+    width: 2.5vw;
+    height: 2.5vw;
     margin: 3.5vw 1vw 3.5vw 1vw;
     background-size: cover;
+    margin: 1vw 0.5vw 0 0.5vw;
+}
+
+#adresse_ikon{
+   width: 4vw;
+    height: 4.3;
+    cursor: pointer;
 }
 
 /************     maps     *************/
@@ -487,7 +507,7 @@ footer {
 #map {
     grid-column: 1/14;
     margin: 0 0 2vw 0;
-    height: 40vw;
+    height: 90vw;
 }
 
 /**********      produkt opsætning ************/
