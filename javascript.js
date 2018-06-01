@@ -76,6 +76,8 @@ function openPopup() {
 //    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
 }
 
+
+
 document.querySelector("[data-close-button]").addEventListener("click", closePopup);
 
 function closePopup() {
@@ -168,5 +170,5 @@ function visKontakt() {
 
     document.querySelector("[data-aabningstider]").innerHTML = kontakt.acf.åbningstider;
 
-    /*document.querySelector("[data-cvr]").textContent = "Tlf. " + kontakt.acf.cvr;*/
+    document.querySelector("[data-cvr]").textContent = "CVR: " + kontakt.acf.cvr;
 };

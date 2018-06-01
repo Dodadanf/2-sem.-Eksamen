@@ -51,11 +51,12 @@ h2 {
 }
 
 h3 {
-    font-family: 'Rozha One', serif;
-    font-size: 3em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7em;
     margin: 1vw 0 1vw 0;
-    text-align: center;
-    color: #efddd0;
+/*    text-align: center;*/
+    color: #e2c7b5;
+    font-style: normal;
 }
 
 p {
@@ -199,8 +200,7 @@ header {
 #kollektioner:hover,
 #kurser:hover,
 #forhandler:hover,
-#om:hover,
-#nyheder:hover {
+#om:hover{
     color: #e2c7b5;
     transition: 0.2s ease-in;
     transform: scale(1.1);
@@ -346,7 +346,14 @@ hr {
 .footer {
     grid-column: 1/14;
     grid-row: 3;
-    background-color: #b0d3d7;
+    background-color: #5777b2;
+    color: #f8f4f1;
+    padding: 1vw 0 1vw 0;
+    font-size: 0.8em;
+}
+
+.footer p{
+    margin: 0;
 }
 
 footer {
@@ -358,19 +365,30 @@ footer {
 
 #adresse {
     grid-column: 2/4;
+    font-style: normal;
 }
 
 #aabningstider {
-    grid-column: 4/6;
+    grid-column: 4/7;
 }
 
 #kontakt {
     grid-column: 9/11;
 }
 
+
+
+#some_container{
+    width: 16vw;
+    height: 6vw;
+    grid-column: 12;
+}
+
 .some_links {
-    width: 20vw;
-    height: 20vw;
+    width: 5.5vw;
+    height: 5.5vw;
+    margin: 3.5vw 1vw 3.5vw 1vw;
+    background-size: cover;
 }
 
 #facebook {
@@ -379,6 +397,7 @@ footer {
 
 #instagram {
     background-image: url(assets/Ikoner/some/baige_insta_ikon.png);
+
 }
 
 /************     maps     *************/
@@ -453,13 +472,20 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
+    margin: 1vw;
+}
+
+#nyheder:hover{
+    opacity: 0.9;
+    transition: 0.2s ease-in;
+    transform: scale(1.1);
 }
 
 #nyheder_header {
     font-size: 6em;
     position: absolute;
-    top: 65%;
-    left: 36%;
+    top: 60%;
+    left: 15%;
     color: #f1a6a3;
     width: 60%;
     margin: 0;
@@ -471,14 +497,15 @@ footer {
     font-size: 2em;
     color: #b0d3d7;
     position: absolute;
-    left: 54%;
-    top: 74%;
-    width: auto;
+    left: 44%;
+    top: 70%;
+    width: 75%;
 }
 
 #velkommen {
     z-index: 1;
     margin: 0;
+   height: 5vw;
     color: #B0d3d7;
     text-align: right;
     font-size: 4em;
@@ -488,8 +515,7 @@ footer {
     font-size: 1em;
     color: #b0d3d7;
     text-align: right;
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin: 0;
 }
 
 blockquote {
@@ -497,9 +523,10 @@ blockquote {
     font-style: italic;
     color: #e2c7b5;
     width: 50%;
-    margin-left: auto;
+    margin: 1vw 1vw 0  auto;
 }
 
+/*
 #quote_left {
     position: absolute;
     right: 40vw;
@@ -509,6 +536,7 @@ blockquote {
 #quote_right {
     position: absolute;
 }
+*/
 
 #signatur {
     width: 20vw;
@@ -516,10 +544,8 @@ blockquote {
     background-image: url(assets/Signatur/underskrift%20bl%C3%A5.svg);
     background-repeat: no-repeat;
     margin-left: auto;
+    margin: 0.5vw 0 1vw auto;
 }
-
-
-
 
 
 
