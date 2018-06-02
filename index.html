@@ -49,7 +49,13 @@
                         <h2 id="univers">i mit univers</h2>
                     </a>
                     <div class="frame_container">
-                        <iframe id="baggrundsvideo" width="100%" height="" src="https://www.youtube.com/embed/3lJ7Lvhjs_Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <video autoplay muted loop id="bg_video">
+                        <source data-bg-video src="" type=video/mp4>
+                    </video>
+
+
+
+<!--                        <iframe id="baggrundsvideo" width="100%" height="" src="https://www.youtube.com/embed/3lJ7Lvhjs_Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
                     </div>
 
                     <blockquote cite="schjoedts.dk/index.html">Jeg skaber papirtynde objekter i porcelæn - funktionelle såvel som unikke værker</blockquote>
@@ -89,6 +95,8 @@
         function hentIndholdForside() {
             document.querySelector("[data-nyheder]").src = nyheder.acf.nyhedsbillede.sizes.large;
             document.querySelector("#nyheder_underheader").textContent = nyheder.acf.nyhedstitel;
+
+//            document.querySelector("[data-bg-video]").src = forside.acf.kampagne_video.url;
         }
     </script>
 </body>

@@ -4,6 +4,8 @@ let kontakt = [];
 let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner";
 let kollektioner = [];
 
+let jSonUrlForside = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/forside_content/343";
+
 
 document.addEventListener("DOMContentLoaded", hentJson);
 
@@ -17,8 +19,10 @@ async function hentJson() {
     kontakt = await dataJson.json();
 
     let dataJsonKollektioner = await fetch(jSonUrlKollektioner);
-
     kollektioner = await dataJsonKollektioner.json();
+
+    let dataJsonForside = await fetch(jSonUrlForside);
+    forside = await dataJsonForside.json();
 
     hentFastIndhold();
 
@@ -47,11 +51,13 @@ async function hentFastIndhold() {
         console.log("mobilmenu");
 
         document.querySelector(".burgermenu_container").innerHTML = header;
+        document.querySelector("[data-logo]").style.backgroundImage = "url(" + forside.acf.logo.url + ")";
+
 
     } else {
 
         document.querySelector(".header").innerHTML = header;
-        document.querySelector("[data-logo]").style.backgroundImage = "url(" + kontakt.acf.logo.url + ")";
+        document.querySelector("[data-logo]").style.backgroundImage = "url(" + forside.acf.logo.url + ")";
 
     }
 
