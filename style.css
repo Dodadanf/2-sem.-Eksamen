@@ -1026,6 +1026,11 @@ blockquote {
     }
 
     /*** BURGERMENU ***/
+    #hovedmenu {
+        display: block;
+        padding-top: 15vw;
+    }
+
     .burgermenu_container {
         width: 100vw;
         height: 100vh;
@@ -1040,25 +1045,27 @@ blockquote {
         z-index: 1;
     }
 
-    .burgermenu_container a {
+    #hovedmenu a {
         display: block;
         font-family: 'Rozha one', serif;
         color: #f8f4f1;
         background-color: transparent;
-        padding: 1vw;
         font-size: 2em;
         border: none;
         cursor: pointer;
         text-align: left;
-        padding-left: 8vw;
+        padding-left: 15vw;
+    }
+
+    #hovedmenu a:hover {
+        color: #f8f4f1;
     }
 
     .dropbtn {
         color: #f8f4f1;
-        padding-left: 8vw;
     }
 
-
+    /*
 
     .dropbtn button {
         display: block;
@@ -1066,12 +1073,10 @@ blockquote {
         color: #fff;
         font-size: 5vw;
     }
-
+*/
     .dropbtn:focus {
         color: #154cad;
     }
-
-
 
     .dropdown-content button {
         background-color: #f8f4f1;
@@ -1124,17 +1129,17 @@ blockquote {
     }
 
     /** ROTERING **/
-    .change .bar1 {
+    .change.bar1 {
         transform: rotate(-45deg) translate(-3px, 4px);
         background-color: #5777b2;
     }
 
-    .change .bar3 {
+    .change.bar3 {
         transform: rotate(45deg) translate(-4px, -4px);
         background-color: #5777b2;
     }
 
-    .change .bar2 {
+    .change.bar2 {
         opacity: 0;
     }
 
@@ -1186,7 +1191,10 @@ blockquote {
 
     .main_kursusgrid,
     .kollektioner {
+
         /*        padding-top: 18%;*/
+        padding-top: 18%;
+
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
