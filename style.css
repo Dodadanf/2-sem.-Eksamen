@@ -5,6 +5,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 200;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 a {
@@ -191,6 +192,7 @@ input[type=submit] {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    z-index: 1006;
 }
 
 .close-button:hover {
@@ -223,6 +225,7 @@ input[type=submit] {
 .popup-billedecontainer {
     width: 100vw;
     margin: 15vw auto;
+
 }
 
 .popup-billede {
@@ -812,7 +815,7 @@ blockquote {
     z-index: 2;
 }
 
-    .uds {
+.uds {
     width: 20vw;
     height: 5vw;
     background-image: url(assets/CV/uds.svg);
@@ -1033,14 +1036,30 @@ blockquote {
     left: 0;
     width: 100vw;
     height: auto;
-    border: double #fff;
     visibility: hidden;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.28);
 }
 
 .cv_content {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: auto;
+    z-index: 1005;
+    border-left: 25vw solid white;
+    border-right: 25vw solid white;
+
+}
+
+.#cv_content {
+    width: 50%;
+    height: auto;
+
+}
+
+.popupbackground {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1003;
 }

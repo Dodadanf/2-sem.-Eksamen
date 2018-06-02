@@ -30,11 +30,11 @@
         <main>
             <div class="om">
                 <div class="helene"></div>
-                <div class="stip cv_hover" data-stip style="cursor: pointer" onclick="stipOpen()"></div>
-                <div class="fea cv_hover" data-fea style="cursor: pointer" onclick="feaOpen()"></div>
-                <div class="udd cv_hover" data-udd style="cursor: pointer" onclick="uddOpen()"></div>
-                <div class="uds cv_hover" data-uds style="cursor: pointer" onclick="udsOpen()"></div>
-                <div class="erh cv_hover" data-erh style="cursor: pointer" onclick="erhOpen()"></div>
+                <div class="stip cv_hover" data-stip style="cursor: pointer"></div>
+                <div class="fea cv_hover" data-fea style="cursor: pointer"></div>
+                <div class="udd cv_hover" data-udd style="cursor: pointer"></div>
+                <div class="uds cv_hover" data-uds style="cursor: pointer"></div>
+                <div class="erh cv_hover" data-erh style="cursor: pointer"></div>
             </div>
         </main>
 
@@ -42,71 +42,84 @@
             <a href="" data-link></a>
         </template>
 
-
-
-
-
         <section class="footer">
         </section>
 
 
-        <div class="cv_popup" data-popup>
-            <img src="assets/CV/" alt="" class="cv_content">
+        <div class="cv_popup" data-cv_popup>
 
-            <button class="close-button" data-closebutton>
-                <div class="close_bar1"></div>
-                <div class="close_bar2"></div>
+
+            <img class="cv_content" src=" " alt="">
+
+            <button class="close-button" data-CV_closebutton>
+                    <div class="close_bar1"></div>
+                    <div class="close_bar2"></div>
             </button>
-
         </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script>
+        document.addEventListener("DOMContentLoaded", cvClickFunction);
+
+        function cvClickFunction() {
+
+            document.querySelector("[data-stip]").addEventListener("click", stipOpen);
+            document.querySelector("[data-fea]").addEventListener("click", feaOpen);
+            document.querySelector("[data-udd]").addEventListener("click", uddOpen);
+            document.querySelector("[data-uds]").addEventListener("click", udsOpen);
+            document.querySelector("[data-erh]").addEventListener("click", erhOpen);
+
+        }
+
         function stipOpen() {
-            console.log("stripOpen");
-            document.querySelector(".cv_popop").style.visibility = "visible";
+            console.log("stipOpen");
+            document.querySelector(".cv_popup").style.visibility = "visible";
 
-            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+            document.querySelector(".cv_content").src = "assets/CV/stipendier-09.png";
 
-            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+            document.querySelector("[data-CV_closebutton]").addEventListener("click", closeCvPopup);
         }
 
         function feaOpen() {
             console.log("feaOpen");
-            document.querySelector(".cv_popop").style.visibility = "visible";
+            document.querySelector(".cv_popup").style.visibility = "visible";
 
-            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+            document.querySelector(".cv_content").src = "assets/CV/featured_in-03.png";
 
-            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+            document.querySelector("[data-CV_closebutton]").addEventListener("click", closeCvPopup);
         }
 
         function uddOpen() {
             console.log("uddOpen");
-            document.querySelector(".cv_popop").style.visibility = "visible";
+            document.querySelector(".cv_popup").style.visibility = "visible";
 
-            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+            document.querySelector(".cv_content").src = "assets/CV/uddanelse-05.png";
 
-            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+            document.querySelector("[data-CV_closebutton]").addEventListener("click", closeCvPopup);
         }
 
         function udsOpen() {
             console.log("udsOpen");
-            document.querySelector(".cv_popop").style.visibility = "visible";
+            document.querySelector(".cv_popup").style.visibility = "visible";
 
-            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+            document.querySelector(".cv_content").src = "assets/CV/udstillinger-12.png";
 
-            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+            document.querySelector("[data-CV_closebutton]").addEventListener("click", closeCvPopup);
         }
 
         function erhOpen() {
             console.log("erhOpen");
-            document.querySelector(".cv_popop").style.visibility = "visible";
+            document.querySelector(".cv_popup").style.visibility = "visible";
 
-            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+            document.querySelector(".cv_content").src = "assets/CV/erhvervserfaring-06.png";
 
-            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+            document.querySelector("[data-CV_closebutton]").addEventListener("click", closeCvPopup);
+        }
+
+        function closeCvPopup() {
+            console.log("jejej")
+            document.querySelector("[data-cv_popup]").style.visibility = "hidden";
         }
     </script>
 </body>
