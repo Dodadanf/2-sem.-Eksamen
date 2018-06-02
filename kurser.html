@@ -22,7 +22,7 @@
 
         </section>
 
-         <section class="burgermenu_container"></section>
+        <section class="burgermenu_container"></section>
 
 
         <div id="nyhedsbrev" data-nyhedsbrev>
@@ -56,9 +56,6 @@
 
     </div>
     <script>
-        let jSonUrlKurser = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kurser"
-        let kurser = [];
-
         document.addEventListener("DOMContentLoaded", hentJson);
 
         async function hentJson() {
@@ -89,17 +86,16 @@
                 display.appendChild(klon);
 
                 if (mq.matches) {
-                console.log("mobilvisning");
-                klon.querySelector("[data-kursus]").addEventListener("click", () => {
-                klon.querySelector("[data-hover-container]").style.opacity = 1;
-                });
+                    console.log("mobilvisning");
+                    klon.querySelector("[data-kursus]").addEventListener("click", () => {
+                        klon.querySelector("[data-hover-container]").style.opacity = 1;
+                    });
 
-            }
+                }
 
             });
 
         };
-
 
     </script>
 </body>

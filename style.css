@@ -18,7 +18,7 @@ img {
     height: auto;
 }
 
-video{
+video {
     width: 100%;
     height: auto;
 }
@@ -104,7 +104,7 @@ p {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 10%;
-   z-index: 1;
+    z-index: 1;
 
     animation-name: komFrem;
     animation-duration: 0.8s;
@@ -115,13 +115,13 @@ p {
     transition: 0.5s ease-in-out;
 }
 
-#nyhedsbrev_header{
+#nyhedsbrev_header {
     margin: 1.5vw 0vw 0.3vw 0.6vw;
     width: 5.5vw;
     font-size: 0.7em;
     font-weight: 100;
     color: #f8f4f1;
-     text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 #nyhedsbrev_container {
@@ -453,7 +453,9 @@ footer {
     background-size: cover;
 }
 
-#butiksinfo h3, #kontakt_container h3, #some_container h3{
+#butiksinfo h3,
+#kontakt_container h3,
+#some_container h3 {
     text-transform: uppercase;
     font-weight: 400;
     color: #154cad;
@@ -495,7 +497,7 @@ footer {
     transition: 0.2s ease-in-out;
 }
 
-.some_links:hover{
+.some_links:hover {
     transform: scale(1.2);
 }
 
@@ -506,7 +508,7 @@ footer {
     margin: 0.8vw 3.5vw 0 3.5vw;
 }
 
-#adresse_ikon{
+#adresse_ikon {
     width: 3.8vw;
     height: 3vw;
     margin: 1vw auto;
@@ -539,7 +541,7 @@ footer {
 }
 
 
-#adresse{
+#adresse {
     width: 200px;
     font-style: normal;
     margin: 0 auto;
@@ -552,7 +554,7 @@ footer {
     font-size: 1.3em;
 }
 
-.adresse_placering{
+.adresse_placering {
     left: 61vw;
 }
 
@@ -659,7 +661,8 @@ footer {
     cursor: pointer;
 }
 
-#nyheder_header:hover, #nyheder_underheader:hover{
+#nyheder_header:hover,
+#nyheder_underheader:hover {
     transform: scale(1.1);
 }
 
@@ -670,7 +673,7 @@ footer {
     left: -8.5%;
     top: 100%;
     width: 75%;
-     transition: 0.2s ease;
+    transition: 0.2s ease;
     cursor: pointer;
 }
 
@@ -683,7 +686,8 @@ footer {
     transition: 0.2s ease;
 }
 
-#velkommen:hover, #univers:hover{
+#velkommen:hover,
+#univers:hover {
     transform: scale(1.05);
 }
 
@@ -991,7 +995,9 @@ blockquote {
 
 @media all and (max-width: 1024px) {
 
-    .footer{
+
+
+    .footer {
         height: 100px;
     }
 
@@ -1001,20 +1007,21 @@ blockquote {
     }
 
     @keyframes komFrem {
-    0% {
-        left: 100%;
+        0% {
+            left: 100%;
+        }
+
+        100% {
+            left: 90%;
+        }
     }
 
-    100% {
-        left: 90%;
-    }
-}
-
-     .kursus_navn{
+    .kursus_navn {
         font-size: 1.5em;
     }
 
-    .kursusbeskrivelse, .kursuspris{
+    .kursusbeskrivelse,
+    .kursuspris {
         font-weight: 100;
     }
 
@@ -1166,8 +1173,7 @@ blockquote {
 
 
     /* FOOTER */
-
- .some_links{
+    .some_links {
         width: 5vw;
         height: 5vw;
 
@@ -1180,32 +1186,30 @@ blockquote {
 
     .main_kursusgrid,
     .kollektioner {
-/*        padding-top: 18%;*/
+        /*        padding-top: 18%;*/
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 
     /* FORSIDE */
-
     @keyframes komFrem {
-    0% {
-        left: 100%;
-    }
+        0% {
+            left: 100%;
+        }
 
-    100% {
-        left: 80%;
+        100% {
+            left: 80%;
+        }
     }
-}
 
     /* KOLLEKTIONER */
-
-    .kollektionsnavn{
-           left: -5%;
+    .kollektionsnavn {
+        left: -5%;
         top: -9%;
     }
 
-    .kollektion{
+    .kollektion {
         height: 50vw;
     }
 
@@ -1233,12 +1237,12 @@ blockquote {
 
     }
 
-    .kursus_hover_container{
+    .kursus_hover_container {
         font-size: 1.2em;
         font-weight: 100;
     }
 
-        .kursus_navn {
+    .kursus_navn {
         text-align: center;
         color: #f1f8f4;
         font-size: 1.2em;
@@ -1253,8 +1257,7 @@ blockquote {
 
 
 
-/* OM */
-
+    /* OM */
     .cv_popup {
         position: absolute;
         top: 0vw;
@@ -1302,7 +1305,7 @@ blockquote {
 }
 
 .signatur {
-        width: 19vw;
+    width: 19vw;
     height: 3vw;
     background-image: url(assets/CV/underskrift_blaa.svg);
     background-repeat: no-repeat;
