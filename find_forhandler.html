@@ -2,7 +2,7 @@
 <html lang="da">
 
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schjødts - Unika keramik</title>
     <meta name="description" content="Velkommen til Schjødts Keramiks univers. En verden af feminin, unika keramik præget af kærlighed til håndværket.">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     <div class="main_grid">
 
 
@@ -22,7 +22,7 @@
 
         </section>
 
-         <div id="nyhedsbrev" data-nyhedsbrev>
+        <div id="nyhedsbrev" data-nyhedsbrev>
 
         </div>
 
@@ -76,48 +76,33 @@
         };
 
         function codeAdress() {
-
             var i = 0;
             var marker = {};
 
             if (kontakter.length > 0) {
-
-
                 kontakter.forEach(kontakt => {
 
                     i++;
-                    console.log(i);
-
                     let geocoder = new google.maps.Geocoder();
                     geocoder.geocode({
                         'address': kontakt.acf.adresse + ", " + kontakt.acf.postnr_by
                     }, function(results, status) {
 
                         if (status == 'OK') {
-
                             marker[i] = new google.maps.Marker({
-
-                                 icon:{
+                                icon: {
                                     url: kontakt.acf.logo_pin.url,
-                                    scaledSize: new google.maps.Size(120,120)
+                                    scaledSize: new google.maps.Size(120, 120)
                                 },
-
                                 map: map,
                                 position: results[0].geometry.location
                             });
 
-                            console.log(marker[i])
-
                             let infowindow = new google.maps.InfoWindow({
                                 content: "<h2>" + kontakt.acf.firmanavn + "</h2>" + "<p>" + kontakt.acf.adresse + "</p>" + "<p>" + kontakt.acf.postnr_by + "</p>" + "<p>" + kontakt.acf.land + "</p>" + "<p>" + kontakt.acf.telefonnummer + "</p>" + "<p>" + kontakt.acf.email + "</p>" + "<p>" + kontakt.acf.hjemmeside + "</p>" + "<p>" + kontakt.acf.åbningstider + "</p>"
-
                             });
-                            console.log(marker[i]);
-
 
                             marker[i].addListener("click", function() {
-                                console.log(marker[i]);
-
                                 infowindow.open(map, this);
                             });
 
