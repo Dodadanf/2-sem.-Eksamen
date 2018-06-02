@@ -995,7 +995,9 @@ blockquote {
 
 @media all and (max-width: 1024px) {
 
-
+    body {
+        padding-top: 150px;
+    }
 
     .footer {
         height: 100px;
@@ -1019,6 +1021,8 @@ blockquote {
     .kursus_navn {
         font-size: 1.5em;
     }
+
+
 
     .kursusbeskrivelse,
     .kursuspris {
@@ -1185,16 +1189,16 @@ blockquote {
     }
 
     /**************         GRID         **************/
+    body {
+        padding-top: 50px;
+    }
+
     main {
         margin-top: 5vw;
     }
 
     .main_kursusgrid,
     .kollektioner {
-
-        /*        padding-top: 18%;*/
-        padding-top: 18%;
-
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
