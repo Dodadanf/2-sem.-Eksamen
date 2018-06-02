@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     <div class="main_grid">
 
 
@@ -21,32 +21,93 @@
         </section>
 
 
-         <div id="nyhedsbrev" data-nyhedsbrev>
+        <div id="nyhedsbrev" data-nyhedsbrev>
 
         </div>
 
         <div id="nyhedsbrev_container"></div>
 
         <main>
+            <div class="om">
+                <div class="helene"></div>
+                <div class="stip cv_hover" data-stip style="cursor: pointer" onclick="stipOpen()"></div>
+                <div class="fea cv_hover" data-fea style="cursor: pointer" onclick="feaOpen()"></div>
+                <div class="udd cv_hover" data-udd style="cursor: pointer" onclick="uddOpen()"></div>
+                <div class="uds cv_hover" data-uds style="cursor: pointer" onclick="udsOpen()"></div>
+                <div class="erh cv_hover" data-erh style="cursor: pointer" onclick="erhOpen()"></div>
+            </div>
         </main>
 
         <template data-menutemplate>
             <a href="" data-link></a>
         </template>
 
-        <div class="helene"></div>
 
-        <div class="stip"></div>
-        <div class="fea"></div>
-        <div class="udd"></div>
-        <div class="uds"></div>
 
-        <div class="erh"></div>
+
 
         <section class="footer">
         </section>
 
 
+        <div class="cv_popup" data-popup>
+            <img src="assets/CV/" alt="" class="cv_content">
+
+            <button class="close-button" data-closebutton>
+                <div class="close_bar1"></div>
+                <div class="close_bar2"></div>
+            </button>
+
+        </div>
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        function stipOpen() {
+            console.log("stripOpen");
+            document.querySelector(".cv_popop").style.visibility = "visible";
+
+            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+
+            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+        }
+
+        function feaOpen() {
+            console.log("feaOpen");
+            document.querySelector(".cv_popop").style.visibility = "visible";
+
+            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+
+            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+        }
+
+        function uddOpen() {
+            console.log("uddOpen");
+            document.querySelector(".cv_popop").style.visibility = "visible";
+
+            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+
+            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+        }
+
+        function udsOpen() {
+            console.log("udsOpen");
+            document.querySelector(".cv_popop").style.visibility = "visible";
+
+            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+
+            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+        }
+
+        function erhOpen() {
+            console.log("erhOpen");
+            document.querySelector(".cv_popop").style.visibility = "visible";
+
+            document.getElementsByClassName(".cv_content").src = "assets/CV/stipenier-09.png";
+
+            document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
+        }
+    </script>
 </body>
 </html>
