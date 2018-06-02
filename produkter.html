@@ -18,6 +18,7 @@
 
 
         <section class="header">
+
         </section>
 
         <div id="nyhedsbrev" data-nyhedsbrev>
@@ -31,7 +32,7 @@
             <section class="kollektionsheader">
 
                 <button class="kollektionssplash" src="" alt="" data-kollektionsheaderimg></button>
-                <div class="kollektionsnavn" data-kollektionsheader></div>
+<!--                <div class="kollektionsnavn" data-kollektionsheader></div>-->
 
             </section>
 
@@ -136,7 +137,7 @@
 
              document.querySelector("[data-kollektionsheaderimg]").style.backgroundImage = "url('" + produktFilter[0].acf.splash.sizes.large + "')";
 
-            document.querySelector("[data-kollektionsheader]").textContent = produktFilter[0].acf.beskrivelse_af_produkt;
+            document.querySelector("[data-kollektionsheaderimg]").textContent = produktFilter[0].acf.beskrivelse_af_produkt;
 
             document.querySelector("[data-produktpreview]").src = produktFilter[0].acf.billede_af_produktet.sizes.large;
 

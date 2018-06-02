@@ -26,12 +26,11 @@ async function hentJson() {
 
 async function hentFastIndhold() {
 
-    var mq = window.matchMedia('all and (max-width: 900px)');
+    var mq = window.matchMedia('all and (max-width: 1024px)');
 
     let headerData = await fetch("header.html");
     let header = await headerData.text();
-    document.querySelector(".header").innerHTML = header;
-    document.querySelector("[data-logo]").style.backgroundImage = "url("+kontakt.acf.logo.url+")";
+
 
     let footerData = await fetch("footer.html");
     let footer = await footerData.text();
@@ -43,24 +42,18 @@ async function hentFastIndhold() {
 
     document.querySelector("[data-nyhedsbrev]").addEventListener("click", openPopup);
 
-//    document.querySelector("[data-adresse-ikon]").addEventListener("click", openPopupAdresse);
-
 
     if (mq.matches) {
         console.log("mobilmenu");
-        let sidemenuData = await fetch("mobilmenu.html");
 
-        console.log(sidemenuData.text);
+        document.querySelector(".burgermenu_container").innerHTML = header;
 
-        //        let sidemenu = await sidemenuData.text();
-        //        document.querySelector(".sidemenu").innerHTML = sidemenu;
-        //
     } else {
-        //        let sidemenuData = await fetch("sidemenu.html");
-        //        let sidemenu = await sidemenuData.text();
-        //        document.querySelector(".sidemenu").innerHTML = sidemenu;
-    }
 
+        document.querySelector(".header").innerHTML = header;
+        document.querySelector("[data-logo]").style.backgroundImage = "url(" + kontakt.acf.logo.url + ")";
+
+    }
 
     visFooter();
     visMenu();
@@ -75,8 +68,8 @@ function openPopup() {
     document.querySelector(".popup").style.visibility = "visible";
     // igen bruges class istedet for data-, da man skal ændre stylingen
 
-//    document.querySelector("[data-billede]").src = sliderImageMenukort;
-//    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
+    //    document.querySelector("[data-billede]").src = sliderImageMenukort;
+    //    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
 
     document.querySelector("[data-closebutton]").addEventListener("click", closePopup);
 }
@@ -93,7 +86,7 @@ function closePopup() {
 //function openPopupAdresse() {
 //
 //    document.querySelector(".popup-adresse").style.visibility = "visible";
-    // igen bruges class istedet for data-, da man skal ændre stylingen
+// igen bruges class istedet for data-, da man skal ændre stylingen
 
 //    document.querySelector("[data-billede]").src = sliderImageMenukort;
 //    document.querySelector("[data-billede]").alt = "billede af" + " " + sliderImageMenukort;
@@ -173,7 +166,7 @@ function burgermenu() {
     function toggleBurgermenu() {
         document.querySelector(".burgermenu").classList.toggle("change");
         document.querySelector(".burgermenu").classList.toggle("skrump");
-        document.querySelector(".sidemenu").classList.toggle("show");
+        document.querySelector(".burgermenu_container").classList.toggle("show");
     }
 }
 
@@ -185,7 +178,7 @@ function burgermenu() {
 function visFooter() {
 
 
-//    document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
+    //    document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
 
     document.querySelector("[data-gade]").textContent = kontakt.acf.adresse;
     document.querySelector("[data-postnr]").textContent = kontakt.acf.postnr_by;

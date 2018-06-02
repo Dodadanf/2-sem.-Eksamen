@@ -2,7 +2,7 @@
 <html lang="da">
 
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schjødts - Unika keramik</title>
     <meta name="description" content="Velkommen til Schjødts Keramiks univers. En verden af feminin, unika keramik præget af kærlighed til håndværket.">
@@ -14,11 +14,12 @@
 </head>
 
 <body>
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     <div class="main_grid">
 
 
         <section class="header">
+
         </section>
 
 
@@ -34,11 +35,15 @@
         </main>
 
         <template class="kurser" data-template>
-          <article class="kursus" data-kursus>
-              <h3 class="kursustitelnavn" data-kursustitel></h3>
-              <!--<img class="kursusbillede" src="" alt="" data-kursusbillede>-->
+          <article class="kursus_container" data-kursus-container>
+
+
+              <button class="kursus" data-kursus></button>
+             <div class="kursus_hover_container" data-hover-container>
+             <h3 class="kursus_navn" data-kursusnavn></h3>
               <p class="kursusbeskrivelse" data-kursusbeskrivelse></p>
               <p class="kursuspris" data-kursuspris></p>
+              </div>
           </article>
         </template>
 
@@ -67,20 +72,36 @@
 
 
         function visKurser() {
+
+            var mq = window.matchMedia('all and (max-width: 900px)');
+
             kurser.forEach(kursus => {
                 let display = document.querySelector("[data-liste]");
                 let template = document.querySelector("[data-template]");
                 let klon = template.cloneNode(true).content;
                 console.log(kursus);
-                klon.querySelector("[data-kursustitel]").textContent = kursus.acf.kursus_navn;
-                /*klon.querySelector("[data-nyhedsbillede]").src = kursus.acf.nyhedsbillede.sizes.large;
-                klon.querySelector("[data-nyhedsbillede]").alt = kursus.acf.nyhedstitel;*/
+                klon.querySelector("[data-kursus]").textContent = kursus.acf.kursus_navn;
+
+                klon.querySelector("[data-kursus]").style.backgroundImage = "url('" + kursus.acf.kursus_billede.sizes.large + "')";
+
+                klon.querySelector("[data-kursusnavn]").textContent = kursus.acf.kursus_navn;
+
                 klon.querySelector("[data-kursusbeskrivelse]").innerHTML = kursus.acf.kursus_beskrivelse
-                klon.querySelector("[data-kursuspris]").textContent = kursus.acf.kursus_pris
+                klon.querySelector("[data-kursuspris]").innerHTML = kursus.acf.kursus_pris
                 display.appendChild(klon);
 
+                if (mq.matches) {
+                console.log("mobilvisning");
+                klon.querySelector("[data-kursus]").addEventListener("click", () => {
+                klon.querySelector("[data-hover-container]").style.opacity = 1;
+                });
+
+            }
+
             });
+
         };
+
 
     </script>
 </body>
