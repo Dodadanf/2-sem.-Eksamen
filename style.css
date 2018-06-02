@@ -1035,18 +1035,11 @@ blockquote {
         height: 100%;
     }
 
-
-    .kursusbeskrivelse, .kursuspris{
-=======
-    .kursus_navn {
+  .kursus_navn {
         font-size: 1.5em;
     }
-
-
-
     .kursusbeskrivelse,
     .kursuspris {
->>>>>>> origin/master
         font-weight: 100;
         font-size: 0.8em;
         padding: 0 5vw;
