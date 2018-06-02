@@ -1,5 +1,9 @@
-let jSonUrl = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info/12";
+let jSonUrlKontakt = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kontakt_info/12";
 let kontakt = [];
+
+let jSonUrlKurser = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kurser";
+
+let kurser = [];
 
 let jSonUrlKollektioner = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kollektioner";
 let kollektioner = [];
@@ -15,8 +19,11 @@ document.addEventListener("DOMContentLoaded", hentJson);
 
 async function hentJson() {
 
-    let dataJson = await fetch(jSonUrl);
-    kontakt = await dataJson.json();
+    let dataJsonKurser = await fetch(jSonUrlKurser);
+    kurser = await dataJsonKurser.json();
+
+    let dataJsonKontakt = await fetch(jSonUrlKontakt);
+    kontakt = await dataJsonKontakt.json();
 
     let dataJsonKollektioner = await fetch(jSonUrlKollektioner);
     kollektioner = await dataJsonKollektioner.json();
@@ -125,6 +132,23 @@ function visMenu() {
 
 };
 
+/*function visMenu2() {
+    kurser.forEach(kursus => {
+
+        let display = document.querySelector("[data-menu2]");
+        let template = document.querySelector("[data-menutemplate]");
+        let klon = template.cloneNode(true).content;
+
+        kursus.querySelector("[data-link]").textContent = kurser.acf.kursus_navn;
+        kursus.querySelector("[data-link]").addEventListener("click", () => {
+            location.href = "produkter.html?kollektion=" + kurser.acf.kollektionens_url_input;
+        });
+        display.appendChild(klon);
+
+    });
+
+};*/
+
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -135,6 +159,25 @@ function myFunction() {
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('showSidemenu')) {
+                openDropdown.classList.remove('showSidemenu');
+            }
+        }
+    }
+};
+
+function myFunction2() {
+    document.getElementById("myDropdown").classList.toggle("showSidemenu")
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn2')) {
 
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
