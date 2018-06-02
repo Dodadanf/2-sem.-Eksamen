@@ -56,8 +56,6 @@
 
     </div>
     <script>
-        let jSonUrlKurser = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/kurser"
-        let kurser = [];
 
         document.addEventListener("DOMContentLoaded", hentJson);
 
@@ -71,7 +69,7 @@
 
         function visKurser() {
 
-            var mq = window.matchMedia('all and (max-width: 900px)');
+            var mq = window.matchMedia('all and (max-width: 1024px)');
 
             kurser.forEach(kursus => {
                 let display = document.querySelector("[data-liste]");
@@ -86,7 +84,7 @@
 
                 klon.querySelector("[data-kursusbeskrivelse]").innerHTML = kursus.acf.kursus_beskrivelse
                 klon.querySelector("[data-kursuspris]").innerHTML = kursus.acf.kursus_pris
-                display.appendChild(klon);
+
 
                 if (mq.matches) {
                 console.log("mobilvisning");
@@ -95,6 +93,8 @@
                 });
 
             }
+
+                display.appendChild(klon);
 
             });
 

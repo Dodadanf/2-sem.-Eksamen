@@ -1011,11 +1011,26 @@ blockquote {
 }
 
      .kursus_navn{
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
+
+    .kursus_container {
+        height: 30vw;
+    }
+
+    .kursus_hover_container {
+        height: 30vw;
+        top:-103%;
+    }
+    .kursus {
+        height: 100%;
+    }
+
 
     .kursusbeskrivelse, .kursuspris{
         font-weight: 100;
+        font-size: 0.8em;
+        padding: 0 5vw;
     }
 
     /*** BURGERMENU ***/
@@ -1023,6 +1038,7 @@ blockquote {
     #hovedmenu{
         display: block;
         padding-top: 15vw;
+
     }
 
     .burgermenu_container {
@@ -1036,7 +1052,7 @@ blockquote {
         margin: 0;
         text-align: left;
         position: absolute;
-        z-index: 1;
+        z-index: 3;
     }
 
     #hovedmenu a {
@@ -1124,12 +1140,12 @@ blockquote {
     }
 
     /** ROTERING **/
-    .change.bar1 {
+    .change .bar1 {
         transform: rotate(-45deg) translate(-3px, 4px);
         background-color: #5777b2;
     }
 
-    .change.bar3 {
+    .change .bar3 {
         transform: rotate(45deg) translate(-4px, -4px);
         background-color: #5777b2;
     }
@@ -1230,7 +1246,7 @@ blockquote {
     }
 
     .kursus {
-        height: 40vw;
+        height: 100%;
         font-size: 2.5em;
     }
 
@@ -1249,7 +1265,7 @@ blockquote {
         text-align: center;
         color: #f1f8f4;
         font-size: 1.2em;
-        padding-top: 4vw;
+        padding-top: 2.5vw;
     }
 
     .kursusbeskrivelse,
@@ -1269,14 +1285,13 @@ blockquote {
         width: 100vw;
         height: auto;
         visibility: hidden;
-        z-index: 1000;
     }
 
     .cv_content {
         position: absolute;
         width: 50%;
         height: auto;
-        z-index: 1005;
+        z-index: 1;
         border-left: 25vw solid white;
         border-right: 25vw solid white;
 
