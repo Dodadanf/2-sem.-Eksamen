@@ -828,15 +828,18 @@ blockquote {
     width: 100vw;
     height: auto;
     border: double #fff;
-    visibility: hidden;
+    display: none;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.28);
 }
 
 .cv_content {
     position: absolute;
-    width: 100%;
+    width: 50%;
+    border-left: 25vw solid #f8f4f1;
     height: auto;
+    border-right: 25vw solid #f8f4f1;
+
 }
 
 
