@@ -20,10 +20,12 @@
         </section>
 
         <div id="nyhedsbrev" data-nyhedsbrev>
-
+            <h3 id="nyhedsbrev_header">Tilmeld nyhedsbrev</h3>
         </div>
 
-        <div id="nyhedsbrev_container"></div>
+        <div id="nyhedsbrev_container">
+
+        </div>
 
 
         <main>
@@ -42,12 +44,6 @@
                 <div class="kollektionsnavn" data-kollektionsnavn></div>
             </article>
         </template>
-
-
-        <template data-menutemplate>
-            <a href="" data-link></a>
-        </template>
-
 
         <section class="footer">
         </section>
@@ -86,8 +82,16 @@
 
                 klon.querySelector("[data-kollektion]").addEventListener("click", () => {
                     location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
+
                 });
-                display.appendChild(klon);
+
+                klon.querySelector("[data-kollektionsnavn]").addEventListener("click", () => {
+                location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
+
+
+                });
+
+                 display.appendChild(klon);
             });
         };
     </script>

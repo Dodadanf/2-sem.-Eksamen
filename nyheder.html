@@ -23,7 +23,7 @@
         </section>
 
          <div id="nyhedsbrev" data-nyhedsbrev>
-
+            <h3 id="nyhedsbrev_header">Tilmeld nyhedsbrev</h3>
         </div>
 
         <div id="nyhedsbrev_container"></div>
@@ -43,11 +43,6 @@
           </article>
         </template>
 
-        <template data-menutemplate>
-            <a href="" data-link></a>
-        </template>
-
-
         <section class="footer">
         </section>
 
@@ -55,8 +50,6 @@
     <script>
         let jSonUrlNyheder = "http://ecorporation.dk/kea/2_semester/opgaver/eksamen/wordpress/wp-json/acf/v3/nyheder"
         let nyheder = [];
-
-
 
         document.addEventListener("DOMContentLoaded", hentJson);
 

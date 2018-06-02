@@ -78,7 +78,6 @@ p {
     left: 39.5%;
     height: 12.5vw;
     width: 20vw;
-    /*    background-image: url(assets/Logo/SVG/logo_bl%C3%A5_mix_med_beige_kant.svg);*/
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -96,16 +95,16 @@ p {
 
 #nyhedsbrev {
     position: absolute;
-    top: 50%;
-    left: 100vw;
+    top: 60%;
+    left: 100%;
     border-radius: 10px;
-    width: 10vw;
-    height: 5vw;
+    width: 30vw;
+    height: 9vh;
     background-color: #154cad;
-    background-image: url(assets/Ikoner/nyheds_ikon.svg);
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: 10%;
+   z-index: 1;
 
     animation-name: komFrem;
     animation-duration: 0.8s;
@@ -114,6 +113,15 @@ p {
     animation-delay: 1s;
     animation-iteration-count: 1;
     transition: 0.5s ease-in-out;
+}
+
+#nyhedsbrev_header{
+    margin: 1.5vw 0vw 0.3vw 0.6vw;
+    width: 5.5vw;
+    font-size: 0.7em;
+    font-weight: 100;
+    color: #f8f4f1;
+     text-transform: uppercase;
 }
 
 #nyhedsbrev_container {
@@ -127,17 +135,18 @@ p {
 
 @keyframes komFrem {
     0% {
-        left: 100vw;
+        left: 100%;
     }
 
     100% {
-        left: 94vw;
+        left: 90%;
     }
 }
 
 #header_nyhedsbrev {
+    text-transform: uppercase;
     margin-top: 3vw;
-    color: #f1f8f4;
+    color: #f8f4f1;
     text-align: center;
 }
 
@@ -159,7 +168,7 @@ input[type=submit] {
     /*    border: none;*/
     height: 30px;
     background-color: #f1a6a3;
-    color: #f1f8f4;
+    color: #f8f4f1;
     font-family: 'Open sans', sans-serif;
     text-transform: uppercase;
 }
@@ -286,7 +295,7 @@ header {
 #om:hover {
     color: #e2c7b5;
     transition: 0.2s ease-in;
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 #kollektioner:focus,
@@ -422,6 +431,7 @@ hr {
     color: #e2c7b5;
     padding: 0vw 0 1.3vw 0;
     font-size: 0.8em;
+    height: 150px;
 }
 
 .footer p {
@@ -430,7 +440,7 @@ hr {
 
 footer {
     display: grid;
-    grid-template-columns: repeat(13, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column: 1/14;
     grid-row: 4;
 }
@@ -443,55 +453,107 @@ footer {
     background-size: cover;
 }
 
-#adresse {
-    grid-column: 5/7;
+#butiksinfo h3, #kontakt_container h3, #some_container h3{
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #154cad;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#butiksinfo {
+    grid-column: 1;
     grid-row: 2;
-    font-style: normal;
-    /*    padding-left: 40px;*/
-}
-
-#aabningstider {
-    grid-column: 6/8;
-    grid-row: 2;
-    padding-left: 30px;
-}
-
-#aabningstider_header {
-    width: 20px;
-}
-
-#tider {
-    width: 200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
 }
 
 #some_container {
     grid-row: 2;
-    width: 10vw;
+    width: 15vw;
     height: 1vw;
-    grid-column: 9;
+    grid-column: 3;
     text-align: center;
+    width: 100%
 }
 
 #kontakt_container {
     grid-row: 2;
     width: 15vw;
     height: 1vw;
-    grid-column: 8;
+    grid-column: 2;
     text-align: center;
+    width: 100%
 }
 
 .some_links {
     width: 2.5vw;
     height: 2.5vw;
-    margin: 3.5vw 1vw 3.5vw 1vw;
     background-size: cover;
     margin: 1vw 0.5vw 0 0.5vw;
+    transition: 0.2s ease-in-out;
 }
 
-#adresse_ikon {
-    width: 4vw;
-    height: 4.3;
+.some_links:hover{
+    transform: scale(1.2);
+}
+
+#adresse {
+    width: 3.7vw;
+    height: 2.9vw;
     cursor: pointer;
+    margin: 0.8vw 3.5vw 0 3.5vw;
+}
+
+#adresse_ikon{
+    width: 3.8vw;
+    height: 3vw;
+    margin: 1vw auto;
+}
+
+/* FOOTER MODAL */
+
+.popup_adresse {
+    position: absolute;
+    top: 0vw;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: double #fff;
+    position: fixed;
+    visibility: hidden;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+.popup-content-adresse {
+    width: 30%;
+    min-width: 400px;
+    height: 43%;
+    top: 30%;
+    left: 34.5%;
+    color: #fff;
+    position: absolute;
+    background-color: #b0d3d7;
+}
+
+
+#adresse{
+    width: 200px;
+    font-style: normal;
+    margin: 0 auto;
+    font-size: 1.3em;
+}
+
+#tider {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 1.3em;
+}
+
+.adresse_placering{
+    left: 61vw;
 }
 
 /************     maps     *************/
@@ -547,18 +609,15 @@ footer {
 
 .frame_container {
     width: 100%;
-    position: relative;
     overflow: hidden;
-    padding-top: 56.25%;
+    padding-top: 5%;
 }
 
 #nyheder_container {
     grid-column: 1;
     grid-row: 1;
-    position: relative;
     text-align: center;
     color: white;
-    z-index: -1;
 }
 
 .nyheder_container2 {
@@ -590,31 +649,42 @@ footer {
 #nyheder_header {
     font-size: 6em;
     position: absolute;
-    top: 60%;
-    left: 15%;
+    top: 90%;
+    left: 11.4%;
     color: #f1a6a3;
     width: 60%;
     margin: 0;
     width: auto;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
 
+#nyheder_header:hover, #nyheder_underheader:hover{
+    transform: scale(1.1);
 }
 
 #nyheder_underheader {
     font-size: 2em;
     color: #b0d3d7;
     position: absolute;
-    left: 44%;
-    top: 70%;
+    left: -8.5%;
+    top: 100%;
     width: 75%;
+     transition: 0.2s ease;
+    cursor: pointer;
 }
 
 #velkommen {
-    z-index: 1;
     margin: 0;
     height: 5vw;
     color: #B0d3d7;
     text-align: right;
     font-size: 4em;
+    transition: 0.2s ease;
+}
+
+#velkommen:hover, #univers:hover{
+    transform: scale(1.05);
 }
 
 #univers {
@@ -646,7 +716,7 @@ blockquote {
 #signatur {
     width: 20vw;
     height: 4vw;
-    background-image: url(assets/Signatur/underskrift%20bl%C3%A5.svg);
+    background-image: url(assets/Signatur/underskrift_blaa.svg);
     background-repeat: no-repeat;
     margin-left: auto;
     margin: 0.5vw 0 1vw auto;
@@ -671,21 +741,23 @@ blockquote {
     position: relative;
     width: 100%;
     height: 20vw;
-    opacity: 0.85;
+    opacity: 0.80;
     background-size: cover;
     cursor: pointer;
     background-position: 50% 0;
     border: none;
+    transition: 0.5s ease-in-out;
 }
 
 .kollektion:hover {
     opacity: 1;
+    transform: scale(1.05);
 }
 
 .kollektionsnavn {
     text-transform: uppercase;
     font-family: 'Open sans', sans-serif;
-    font-size: 2.7em;
+    font-size: 2.4em;
     color: #154cad;
     position: relative;
     left: -8%;
@@ -721,7 +793,7 @@ blockquote {
     background-position: 0 50%;
     text-transform: uppercase;
     font-family: 'Rozha one', serif;
-    font-size: 10em;
+    font-size: 9em;
     color: #f1f4f8;
     margin-bottom: 1vw;
 }
@@ -765,7 +837,7 @@ blockquote {
     height: 20vw;
     position: relative;
     top: -21.1vw;
-    background-color: #b0d3d7;
+    background-color: rgba(176, 211, 215, 0.87);
     color: #f1f8f4;
     opacity: 0;
 }
@@ -779,6 +851,7 @@ blockquote {
     color: #f1f8f4;
     font-size: 2em;
     padding-top: 4vw;
+    font-family: 'Rozha one', serif;
 }
 
 .kursusbeskrivelse {
@@ -793,6 +866,7 @@ blockquote {
     width: 100%;
     height: 20vw;
     margin-bottom: 1vw;
+    font-weight: 400;
 }
 
 .kursus {
@@ -804,8 +878,6 @@ blockquote {
     font-family: 'Rozha one', serif;
 }
 
-
-
 /*** FORHANDLER ***/
 
 /*** OM ***/
@@ -816,8 +888,6 @@ blockquote {
     height: 45vw;
     margin: auto;
 }
-
-
 
 .cv_hover {
     transition: 0.2s ease-in-out;
@@ -917,10 +987,35 @@ blockquote {
     z-index: 2;
 }
 
+/* IPAD */
+
 @media all and (max-width: 1024px) {
+
+    .footer{
+        height: 100px;
+    }
+
 
     hr {
         display: none;
+    }
+
+    @keyframes komFrem {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: 90%;
+    }
+}
+
+     .kursus_navn{
+        font-size: 1.5em;
+    }
+
+    .kursusbeskrivelse, .kursuspris{
+        font-weight: 100;
     }
 
     /*** BURGERMENU ***/
@@ -1061,13 +1156,18 @@ blockquote {
 }
 
 
+/* IPHONE */
+
 @media all and (max-width: 680px) {
 
 
+    /* FOOTER */
 
+ .some_links{
+        width: 5vw;
+        height: 5vw;
 
-
-
+    }
 
     /**************         GRID         **************/
     main {
@@ -1081,6 +1181,29 @@ blockquote {
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* FORSIDE */
+
+    @keyframes komFrem {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: 80%;
+    }
+}
+
+    /* KOLLEKTIONER */
+
+    .kollektionsnavn{
+           left: -5%;
+        top: -9%;
+    }
+
+    .kollektion{
+        height: 50vw;
     }
 
 
@@ -1098,14 +1221,36 @@ blockquote {
 
     .kursus {
         height: 40vw;
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .kursus_hover_container {
         height: 40vw;
         top: -41vw;
+
     }
 
+    .kursus_hover_container{
+        font-size: 1.2em;
+        font-weight: 100;
+    }
+
+        .kursus_navn {
+        text-align: center;
+        color: #f1f8f4;
+        font-size: 1.2em;
+        padding-top: 4vw;
+    }
+
+    .kursusbeskrivelse,
+    .kursuspris {
+        padding: 0 2vw 0 10vw;
+        font-size: 0.8em;
+    }
+
+
+
+/* OM */
 
     .cv_popup {
         position: absolute;
@@ -1131,26 +1276,6 @@ blockquote {
         width: 50%;
         height: auto;
 
-    }
-
-    .popupbackground {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: #fff;
-        z-index: 1003;
-    }
-    .kursus_navn {
-        text-align: center;
-        color: #f1f8f4;
-        font-size: 1.2em;
-        padding-top: 4vw;
-    }
-
-    .kursusbeskrivelse,
-    .kursuspris {
-        padding: 0 2vw 0 10vw;
-        font-size: 0.8em;
     }
 
     /* FORHANDLER */
