@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
 
         </section>
 
-         <section class="burgermenu_container"></section>
+        <section class="burgermenu_container"></section>
 
         <div id="nyhedsbrev" data-nyhedsbrev>
             <h3 id="nyhedsbrev_header">Tilmeld nyhedsbrev</h3>
@@ -33,7 +34,7 @@
         <main>
 
 
-           <section class="kollektioner" data-kollektionsliste>
+            <section class="kollektioner" data-kollektionsliste>
             </section>
 
 
@@ -68,34 +69,27 @@
 
 
         function visKollektioner() {
-            console.log(kollektioner);
+
             kollektioner.forEach(kollektion => {
                 let display = document.querySelector("[data-kollektionsliste]");
                 let template = document.querySelector("[data-kollektionertemplate]");
                 let klon = template.cloneNode(true).content;
-                console.log(kollektion);
 
                 klon.querySelector("[data-kollektion]").style.backgroundImage = "url('" + kollektion.acf.kollektionsbillede.sizes.large + "')";
-
-
                 klon.querySelector("[data-kollektion]").alt = kollektion.acf.kollektionsbillede.alt;
-
                 klon.querySelector("[data-kollektionsnavn]").textContent = kollektion.acf.kollektionens_navn;
 
                 klon.querySelector("[data-kollektion]").addEventListener("click", () => {
                     location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
-
                 });
-
                 klon.querySelector("[data-kollektionsnavn]").addEventListener("click", () => {
-                location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
-
-
+                    location.href = "produkter.html?kollektion=" + kollektion.acf.kollektionens_url_input;
                 });
-
-                 display.appendChild(klon);
+                display.appendChild(klon);
             });
         };
+
     </script>
 </body>
+
 </html>
