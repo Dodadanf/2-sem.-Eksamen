@@ -71,7 +71,7 @@ async function hentFastIndhold() {
     }
 
     visFooter();
-    visMenu();
+    /*visMenu();*/
     burgermenu();
 
 }
@@ -89,7 +89,7 @@ function closePopup() {
     document.querySelector(".popup").style.visibility = "hidden";
 }
 
-function openPopupAdresse(){
+function openPopupAdresse() {
     document.querySelector(".popup_adresse").style.visibility = "visible";
     // igen bruges class istedet for data-, da man skal ændre stylingen
     document.querySelector("[data-closebutton-adresse]").addEventListener("click", closePopupAdresse);
@@ -100,7 +100,7 @@ function closePopupAdresse() {
 }
 
 
-function visMenu() {
+/*function visMenu() {
     kollektioner.forEach(kollektion => {
 
         let display = document.querySelector("[data-menu]");
@@ -115,7 +115,7 @@ function visMenu() {
 
     });
 
-};
+};*/
 
 /*function visMenu2() {
     kurser.forEach(kursus => {
@@ -212,7 +212,7 @@ function burgermenu() {
 function visFooter() {
 
 
-//        document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
+    //        document.querySelector("[data-telefonnummer]").textContent = kontakt.acf.telefonnummer;
 
     document.querySelector("[data-gade]").textContent = kontakt.acf.adresse;
     document.querySelector("[data-postnr]").textContent = kontakt.acf.postnr_by;
