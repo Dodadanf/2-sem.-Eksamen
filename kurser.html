@@ -33,17 +33,16 @@
         </div>
 
         <main>
+            <p class="kursusHeader">Alle kurser foregår i Schjødts værksted på Classensgade 14, 2100 København Ø</p>
             <section class="main_kursusgrid" data-liste>
             </section>
         </main>
 
         <template class="kurser" data-template>
           <article class="kursus_container" data-kursus-container>
-
-
               <button class="kursus" data-kursus></button>
-             <div class="kursus_hover_container" data-hover-container>
-             <h3 class="kursus_navn" data-kursusnavn></h3>
+              <div class="kursus_hover_container" data-hover-container>
+              <h3 class="kursus_navn" data-kursusnavn></h3>
               <p class="kursusbeskrivelse" data-kursusbeskrivelse></p>
               <p class="kursuspris" data-kursuspris></p>
               </div>
@@ -56,7 +55,6 @@
 
     </div>
     <script>
-
         document.addEventListener("DOMContentLoaded", hentJson);
 
         async function hentJson() {
@@ -99,7 +97,6 @@
             });
 
         };
-
     </script>
 </body>
 

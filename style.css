@@ -832,14 +832,14 @@ blockquote {
     /*    width: 100%;*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1%;
+    grid-gap: 5%;
 }
 
 .kursus_hover_container {
     width: 100%;
     height: 20vw;
     position: relative;
-    top: -21.1vw;
+    top: -21vw;
     background-color: rgba(176, 211, 215, 0.87);
     color: #f1f8f4;
     opacity: 0;
@@ -866,7 +866,7 @@ blockquote {
 .kursus_container {
     width: 100%;
     height: 20vw;
-    margin-bottom: 1vw;
+    margin-bottom: 10%;
     font-weight: 400;
 }
 
@@ -1535,4 +1535,14 @@ blockquote {
     top: 94%;
     left: 83%;
     z-index: 2;
+}
+
+
+
+.kursusHeader {
+    margin: auto;
+    max-width: 750px;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #5777b2;
 }
